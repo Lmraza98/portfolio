@@ -1,0 +1,43 @@
+html, body{
+    font-family:"SF Pro Text";
+    overflow: hidden;
+    background: #FEFFFF;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: auto;
+  }
+
+  h1{
+    color: #FEFFFF;
+  }
+  h2{
+    color: #DEF2F1;
+  }
+a {
+font-family:"SF Pro Text";
+text-decoration: none;
+color: white;
+font-family:"SF Pro Text";
+size: 15px;
+}
+a:hover{
+  transform: scale(1.2);
+  color: #DEF2F1;
+}
+* {
+font-family:"SF Pro Text";
+z-index: inherit;
+}
+
+html,
+body,
+/* body > div:first-child, */
+div#__next,
+div#__next > div
+/* div#__next > div > div  */
+{
+height: 100%;
+width: 100%;
+}
+    
+    

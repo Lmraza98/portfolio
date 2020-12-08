@@ -1,0 +1,29 @@
+{
+  "name": "lucas_portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "emotion": "^11.0.0",
+    "fs": "0.0.1-security",
+    "next": "10.0.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-is": "^16.13.1",
+    "react-trianglify": "^2.0.5",
+    "sass": "^1.29.0",
+    "styled-components": "^5.2.1",
+    "trianglify": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  }
+}
