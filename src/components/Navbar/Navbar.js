@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import Link from '../Link/Link.js';
 import NavbarLink from './NavbarLink.js'
 import Logo from '../Logo/Logo.js'
+import PropTypes from 'prop-types'
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 </style>
@@ -23,14 +24,26 @@ height: ${props => props.home ? "30" : "10"}vh;
 // padding-right: 25%;
 // height: 100%;
 // border-bottom: 2px solid ;
-
+transition: 2s;
 `;
+Navbar_container.propTypes = {
+    home: PropTypes.bool
+}
+Navbar_container.defaultProps = {
+    home: true
+}
 
 
 const Navbar = (props) => {
+    console.log("navbar height: " + props.home)
+    const [page, setPage] = useState(props.home);
+
+    useEffect(() => {
+        setPage(props.home)
+        });
     
     return (
-        <Navbar_container>
+        <Navbar_container home={page}>
             <StyledLogo/>
             <Link link="/" linkName="home" >Home</Link>
             <Link link="/" linkName="skills" >Skills</Link>

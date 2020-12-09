@@ -23,7 +23,7 @@ const Footer_container = styled.div`
     z-index:100;
     background-color: #3aafa9;
     //opacity: 50%;
-    border-top: 2px solid black;
+    // border-top: 2px solid black;
     
 `;
 const  Footer_link = styled.a`
