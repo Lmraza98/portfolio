@@ -1,16 +1,16 @@
-import React, {useRef} from 'react'
+import React, {Component} from 'react'
 
 
 
 import '../styles.css'
+import { PageProvider } from '../page-context.js'
 
-
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
-    <Component {...pageProps} />
-    
+    <PageProvider>
+      <Component {...pageProps} />
+    </PageProvider>
+   
   )
-  
 }
-
 export default MyApp

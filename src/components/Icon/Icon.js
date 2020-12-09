@@ -12,12 +12,11 @@ const StyledIcon = styled.div`
     // height: 100px;
     // width:100px;
 `;
-export default class Icon extends Component {
-    render() {
-        return (
-            <StyledIcon >
-                <Image___hover width="50"height="50" src={"/icons/" + this.props.name}></Image___hover>
-            </StyledIcon>
-        )
-    }
+const Icon = () => {
+    return (
+        <StyledIcon >
+            <Image___hover width="50"height="50" src={"/icons/" + this.props.name}></Image___hover>
+        </StyledIcon>
+    )
 }
+export default Icon

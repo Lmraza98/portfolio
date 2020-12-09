@@ -38,24 +38,21 @@ const  Footer_info = styled.div`
 width: 200px;
 color: white;
 `;
-
-
-export default class Footer extends Component {
-    render() {
-        return (
+const Footer = () => {
+    return (
             
-            <Footer_container>
-                
-                <StyledFooter_link link='/skills'>
-                contact me
-                </StyledFooter_link>
-                <Footer_info>
-                    
-                </Footer_info>
-                {this.props.children}
-                
-            </Footer_container>
+        <Footer_container>
             
-        )
-    }
+            <StyledFooter_link link='/skills'>
+            contact me
+            </StyledFooter_link>
+            <Footer_info>
+                
+            </Footer_info>
+            {/* {this.props.children} */}
+            
+        </Footer_container>
+        
+    )
 }
+export default Footer

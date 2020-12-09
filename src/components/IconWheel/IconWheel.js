@@ -25,17 +25,16 @@ const StyledIcon = styled(Icon)`
 // const StyledIcon_circle___hover = styled(StyledIcon___hover)`
     
 // `
-export default class IconWheel extends Component {
-    render() {
-        return (
-            <>
-            <StyledIcon_container >
-                
-                <StyledIcon name="linkedin.png"></StyledIcon>
-                <StyledIcon name="youtube.png"></StyledIcon>
-                
-            </StyledIcon_container>
-            </>
-        )
-    }
+const IconWheel = () => {
+    return (
+        <>
+        <StyledIcon_container >
+            
+            <StyledIcon name="linkedin.png"></StyledIcon>
+            <StyledIcon name="youtube.png"></StyledIcon>
+            
+        </StyledIcon_container>
+        </>
+    )
 }
+export default IconWheel

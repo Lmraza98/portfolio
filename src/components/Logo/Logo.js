@@ -7,12 +7,11 @@ const StyledLogo = styled.div`
     flex-grow:.25;
     align-self: center;
 `
-export default class Logo extends Component {
-    render() {
-        return (
-            <StyledLogo>
-                Lucas Raza
-            </StyledLogo>
-        )
-    }
+const Logo = () => {
+    return (
+        <StyledLogo>
+            Lucas Raza
+        </StyledLogo>
+    )
 }
+export default Logo

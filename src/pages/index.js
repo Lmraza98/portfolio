@@ -1,20 +1,19 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 // import '../styles/globals.scss'
+import React from 'react'
 import IconWheel from '../components/IconWheel/IconWheel.js'
 import Footer from '../components/Footer/Footer.js'
-import Navbar from '../components/Nabvar/Navbar.js'
+import Navbar from '../components/Navbar/Navbar.js'
 import Canvas from '../components/Canvas/Canvas.js'
 import MainContent from '../components/MainContent/MainContent.js'
+import { usePageState } from '../page-context.js'
 
+const duration = 200;
 
-const Portfolio_container = styled.div
-`
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 15% 80% 5%;
-`;
+const MainContent_container = styled(MainContent)`
+position: fixed;
+height: 100vh`
 const Navbar_item = styled(Navbar)`
   
   //align-content: center;
@@ -35,47 +34,59 @@ const Footer_item = styled(Footer)`
   grid-row: 3 / span 1;
   grid-column:3;
   z-index: 100;
-  height: 50px;
-  position: fixed;
+  height: 5%;
+  // position: fixed;
+  bottom: 0;
 `;
-const StyledCanvas = styled(Canvas)`
-height: 100%;
-// width: 100%;
-z-index: 1;
-top:0;
-left:0;
-grid-row: 1 / span 1;
-  grid-column:1;
+const Portfolio_container = styled.div
+`
+  //position: inherit;
+  display: flex;
+  flex-direction: column;
+  // grid-template-columns: 1fr;
+  // grid-template-rows:${props}% ${getPage()[1]}% 5%;
+  transition: 2s;
 `;
-const Nav_container = styled.div`
+const Home = () => {
+  const { page }  = usePageState()
+  let val;
+  if( page === "home")
+  {
+    val = true;
+  }
+  else{
+    val = false;
+  }
+  console.log("val: " + val)
+  // const [inProp, setInProp] = useState(false);
   
-  // position: relative;
+    // console.log("page state: " + page)
   
-  width: 100%;
-  border-bottom: 2px solid black;
+    // if(page === "home")
+    // {
+    //   return [25, 70];
+    // } else{
+    //   return [5, 90];
+    // }
+
   
-`;
-const MainContent_container = styled(MainContent)`
-  height: 100%;
-  padding-left: 15%;
-  padding-right: 15%;
-  grid-row: 2 / span 1;
-  grid-column:2;
-  z-index:100;
-  position: inherit;
-`;
-export default function Home() {
   return (
     <Portfolio_container>
-      
-        <Navbar_item />
+      <Navbar_item home={val}>
+      {/* <CSSTransition in={inProp} timeout={200}>
+        
+      </CSSTransition> */}
+        </Navbar_item>
+      <MainContent_container>
         <MainContent></MainContent>
-      {/* <StyledCanvas>
-      {/* <MainContent_container/> */}
-      {/* </StyledCanvas> */} 
+      </MainContent_container>
+          
       <Footer_item>
-      <IconWheel_item/>
       </Footer_item>
+      
     </Portfolio_container>
   )
 }
+export default Home
+
+
