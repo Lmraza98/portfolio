@@ -9,6 +9,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <PageProvider>
       <Component {...pageProps} />
+      
     </PageProvider>
    
   )

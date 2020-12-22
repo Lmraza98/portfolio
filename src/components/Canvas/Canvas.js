@@ -1,6 +1,7 @@
 
 import styled from 'styled-components';
 import React, { useRef, useEffect, useLayoutEffect } from 'react'
+import { usePageState, usePageDispatch } from '../../page-context.js'
 
 const StyledDiv = styled.div`
   //boreder:1px solid black;
@@ -8,7 +9,7 @@ const StyledDiv = styled.div`
   height: 100%;
    //width: 100%;
    display: inline;
-   top:0;
+   bottom:0;
 `;
 
 const BackgroundGlow = styled.nav`
@@ -30,8 +31,8 @@ const OverLay = styled.nav`
 const StyledCanvas = styled.canvas`
 position: absolute;
 width: 100%;
-height: 100%;
-top:0;
+height: 100vh;
+bottom:0;
 `
 
 
@@ -39,9 +40,11 @@ const Canvas = props => {
     const canvasRef= useRef(null)
     let requestId;
 
+    let { page } = usePageState()
 
     
-    useEffect(() => {
+    
+    useEffect( () => {
       const canvas = canvasRef.current
       const ctx = canvas.getContext('2d')
       let bgg = document.getElementById("bg_glow")
@@ -57,13 +60,13 @@ const Canvas = props => {
           pushDots();
           ctx.globalCompositeOperation = "lighter";
       }
-
-      document.getElementById("styledIconContainer").onclick = () => {
-        hue = Math.random()*360;
-        bgg.style.background = "radial-gradient(ellipse at center, hsla("+hue+",50%,50%,.8) 0%,rgba(0,0,0,0) 100%)";
-        dots = [];
-        pushDots();
-      }
+    // if(page)
+    // {
+    //   hue = Math.random()*100;
+    //     bgg.style.background = "radial-gradient(ellipse at center, hsla("+hue+",50%,50%,.8) 0%,rgba(0,0,0,0) 100%)";
+    //     dots = [];
+    //     pushDots();
+    // }
 
       let dots=[{}];
       let mx = 0; 
@@ -73,9 +76,9 @@ const Canvas = props => {
       let minWidth = 2;
       let maxHeight = h*.9
       let minHeight = h*.5;
-      let maxSpeed = 35;
-      let minSpeed = 6;
-      let hue = 120;
+      let maxSpeed = 30;
+      let minSpeed = 10;
+      let hue = 395;
       let hueDif = 20; // Hue +/-
       let glow = 0; // Set to 0 for better performance
       ctx.globalCompositeOperation = "lighter";
@@ -144,7 +147,7 @@ const Canvas = props => {
 
   })
     return (
-      <StyledDiv id="styledIconContainer">
+      <StyledDiv >
         
         {props.children}
         <StyledCanvas id="canvas" ref={canvasRef} {...props}/>

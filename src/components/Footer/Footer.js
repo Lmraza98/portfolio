@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import Link from '../Link/Link.js'
 import styled from 'styled-components'
 //import logo from './components/logo'
@@ -13,6 +13,7 @@ const StyledFooter_link = styled(Link)`
     text-decoration: none;
 `
 const Footer_container = styled.div`
+    height: ${props => props.page==="home" ? "5" : "3"}vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,9 +22,8 @@ const Footer_container = styled.div`
     left: 0;
     width: 100%;
     z-index:100;
-    background-color: #3aafa9;
-    //opacity: 50%;
-    // border-top: 2px solid black;
+    background-color: #C4C4C4;
+    transition: .5s;
     
 `;
 const  Footer_link = styled.a`
@@ -38,12 +38,18 @@ const  Footer_info = styled.div`
 width: 200px;
 color: white;
 `;
-const Footer = () => {
+const Footer = (props) => {
+
+    const [page, setPage] = useState(props.page);
+
+    useEffect(() => {
+        setPage(props.page)
+        });
     return (
             
-        <Footer_container>
+        <Footer_container page={page}>
             
-            <StyledFooter_link link='/skills'>
+            <StyledFooter_link active={false}link='/skills'>
             contact me
             </StyledFooter_link>
             <Footer_info>

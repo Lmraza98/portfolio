@@ -9,17 +9,14 @@ const pageReducer = (state, action) => {
         case 'home':{
             return {page: "home"}
         }
-        case 'skills':{
-            return {page: "skills"}
-        }
-        case 'projects':{
-            return {page: "projects"}
+        case 'about':{
+            return {page: "about_me"}
         }
         case 'blog':{
             return {page: "blog"}
         }
         case 'contact':{
-            return {page: "blog"}
+            return {page: "contact"}
         }
         default: {
             throw new Error(`Unhandled action type: ${action.type}`)

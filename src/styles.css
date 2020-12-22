@@ -1,7 +1,7 @@
 html, body{
     font-family:"SF Pro Text";
     overflow: hidden;
-    background: #FEFFFF;
+    background: #FDFDFD;
     padding: 0px;
     margin: 0px;
     overflow-y: auto;
@@ -13,17 +13,17 @@ html, body{
   h2{
     color: #DEF2F1;
   }
-a {
+/* a {
 font-family:"SF Pro Text";
 text-decoration: none;
 color: white;
 font-family:"SF Pro Text";
 size: 15px;
-}
-a:hover{
+} */
+/* a:hover{
   transform: scale(1.2);
   color: #DEF2F1;
-}
+} */
 * {
 font-family:"SF Pro Text";
 z-index: inherit;
