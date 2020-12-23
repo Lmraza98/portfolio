@@ -2,28 +2,71 @@ import React, { Component, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {useSpring, animated, config} from 'react-spring'
 import { usePageState } from '../../page-context.js'
+import { About, Contact, Main } from '../Cards'
 //Define spring
 
 // import styles from './MainContent.css'
-const Main_container = styled.div`
-
+const Card_container = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 50%;
+    // margin-left: 10%;
+    // margin-right: 10%;
+    justify-content: flex-start;
+    // padding: 10px;
 `
-const Content = styled(animated.div)`
-    // width: 100%;
-    // height: 100%;
-    color: black;
-    background-color: black;
-    align-text: center;
-    // display: ${props => props.page ==="home" ? "none" : "flex"};
-    // visibility: 
-    // display: flex;
+const Main_container = styled.div`
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    // position: relative;
+    
+`
+const MainCard = styled(Main)`
+    border: 1px;
+    // border-radius: 10px
+    // width: 50%;
+    // height: 100%;
+    
+    
+`
+const ContactCard = styled(Contact)`
+    border-radius: 10px;
+    border: 1px solid black;
+`
+const AboutCard = styled(About)`
+    border-radius: 10px;
+    border: 1px solid black;
+`
+const GroupCards = styled.div`
+    display: flex;
+    flex-direction column;
+    width: 60%;
+`
+
+const Greeting = styled(animated.div)`
+   // width: 100%;
+    height: 100%;
+    color: black;
+    align-text: center;
+    font-size: 1.5em;
+`
+const Greeting_container = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    height: 10%;
+    color: black;
+    align-text: center;
+    
     margin-left: 5%;
     margin-right: 5%;
-    z-index: 100;
-    height: 100%;
-    background-color: white;
-    z-index:1;
+    z-index:10;
 
 `
 const MainContent = ({page}) => {
@@ -34,15 +77,26 @@ const MainContent = ({page}) => {
         // });
     const transitions = useSpring(
         {   config: { tension: 70 },
-            from: {transform: "translateY(-120%)", opacity: 0,},
+            from: {transform: "translateX(-120%)", opacity: 0},
        to: { transform: "translateY(0)",opacity: 1}, delay:0 
         
      })
        
     return (
          
-      
-          <Content page = {page} style={transitions}>Hello</Content>
+            <Main_container>
+                <Greeting_container>
+                    <Greeting page={page} style={transitions}>Hello, I'm Lucas</Greeting>
+                </Greeting_container>
+                <Card_container>
+                    <MainCard/>
+                    <GroupCards>
+                        <AboutCard/>
+                        <ContactCard/>
+                    </GroupCards>
+                </Card_container>
+            </Main_container>
+          
     )
 }
 export default MainContent

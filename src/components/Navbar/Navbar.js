@@ -15,16 +15,13 @@ height: 10%;
 display: flex;
 flex-direction: row;
 align-items: center;
-// vertical-align: center;
 justify-content: space-around;
 top:0;
 z-index:5;
-// height: ${props => props.page=== "home" ? "20" : "5"}vh;
-// transition: .5s;
 `;
 const Line = styled.div`
 width: 1px;
-height: 40px;
+height: 60px;
 background-color: #A9A9A9;
 margin: 10px
 `
@@ -57,14 +54,6 @@ const Navbar = (props) => {
     {
         console.log("page context is undefined")
     }
-    // useEffect(() => {
-    //     setActive({
-    //         home: home,
-    //         blog: blog,
-    //         about: about
-    //     })
-    // }, []);
-    
     return (
         <Navbar_container >
             <StyledLogo/>
