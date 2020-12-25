@@ -9,52 +9,60 @@ import { About, Contact, Main } from '../Cards'
 const Card_container = styled.div`
     display: flex;
     flex-direction: row;
-    height: 80%;
-    width: 50%;
-    // margin-left: 10%;
-    // margin-right: 10%;
-    justify-content: flex-start;
-    // padding: 10px;
 `
 const Main_container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70%;
+    height: 65%;
     width: 100%;
     justify-content: center;
     align-items: center;
-    // position: relative;
+    position: relative;
     
 `
 const MainCard = styled(Main)`
-    border: 1px;
+    // border: 1px;
+    // position:
     // border-radius: 10px
-    // width: 50%;
+    // width: 100%;
     // height: 100%;
+    flex-grow: 1;
     
     
 `
 const ContactCard = styled(Contact)`
     border-radius: 10px;
     border: 1px solid black;
+    // flex-grow: 1;
+    // height: 100%;
 `
 const AboutCard = styled(About)`
     border-radius: 10px;
     border: 1px solid black;
+    // flex-grow: 1;
+    
 `
 const GroupCards = styled.div`
     display: flex;
     flex-direction column;
-    width: 60%;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    width: 75%;
+    height: 100$;
+    
+    align-content: center;
+    flex-grow: 1;
+
 `
 
 const Greeting = styled(animated.div)`
    // width: 100%;
-    height: 100%;
+    // height: 100%;
     color: black;
     align-text: center;
-    font-size: 1.5em;
+    font-size: 20px;
+    height: 1em
 `
 const Greeting_container = styled.div`
     display: flex;
@@ -69,6 +77,9 @@ const Greeting_container = styled.div`
     z-index:10;
 
 `
+const Container = styled.div`
+    display: block;
+    `
 const MainContent = ({page}) => {
 //const [page, setPage] = useState(props.page);
 // const page = usePageState();
@@ -83,19 +94,20 @@ const MainContent = ({page}) => {
      })
        
     return (
-         
-            <Main_container>
-                <Greeting_container>
-                    <Greeting page={page} style={transitions}>Hello, I'm Lucas</Greeting>
-                </Greeting_container>
-                <Card_container>
-                    <MainCard/>
-                    <GroupCards>
-                        <AboutCard/>
-                        <ContactCard/>
-                    </GroupCards>
-                </Card_container>
-            </Main_container>
+        <Container>
+        <Main_container>
+           <Greeting_container>
+               <Greeting page={page} style={transitions}>Hello, I'm Lucas</Greeting>
+           </Greeting_container>
+           <Card_container>
+               <MainCard/>
+               <GroupCards>
+                   <AboutCard/>
+                   <ContactCard/>
+               </GroupCards>
+           </Card_container>
+       </Main_container></Container>
+            
           
     )
 }

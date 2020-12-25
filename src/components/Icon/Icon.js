@@ -11,11 +11,11 @@ const Image___hover = styled.img`
 const StyledIcon = styled.div`
     // height: 100px;
     // width:100px;
-`;
-const Icon = () => {
+`
+const Icon = (props) => {
     return (
         <StyledIcon >
-            <Image___hover width="50"height="50" src={"/icons/" + this.props.name}></Image___hover>
+            <Image___hover width="50"height="50" src={"/icons/" + props.name}></Image___hover>
         </StyledIcon>
     )
 }
