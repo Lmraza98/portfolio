@@ -1,13 +1,14 @@
-html, body{
-    font-family:"SF Pro Text";
-    overflow: hidden;
-    background: #FDFDFD;
-    padding: 0px;
-    margin: 0px;
-    overflow-y: auto;
-  }
+html,
+body {
+  font-family: "SF Pro Text";
+  overflow: hidden;
+  background: #fdfdfd;
+  padding: 0px;
+  margin: 0px;
+  overflow-y: auto;
+}
 
-  /* h1{
+/* h1{
     color: #FEFFFF;
   }
   h2{
@@ -25,8 +26,8 @@ size: 15px;
   color: #DEF2F1;
 } */
 * {
-font-family:"SF Pro Text";
-z-index: inherit;
+  font-family: "SF Pro Text";
+  z-index: inherit;
 }
 
 html,
@@ -34,10 +35,7 @@ body,
 /* body > div:first-child, */
 div#__next,
 div#__next > div
-/* div#__next > div > div  */
-{
-height: 100%;
-width: 100%;
+/* div#__next > div > div  */ {
+  height: 100%;
+  width: 100%;
 }
-
-    

@@ -1,6 +1,5 @@
+import Main from "./Main";
+import About from "./About.js";
+import Contact from "./Contact";
 
-import Main from './Main'
-import About from './About.js'
-import Contact from './Contact'
-
-export {Contact, Main, About}
+export { Contact, Main, About };
