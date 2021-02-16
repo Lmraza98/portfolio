@@ -4,21 +4,17 @@ import styled from "styled-components";
 const StyledIcon_container = styled.div`
   display: flex;
   flex-direction: row;
-  align-content: space-around;
-  // width: 100%;
+  justify-content: space-around;
+  width: 100%;
   align-items: center;
   z-index: 100;
-  // height:100%;
 `;
 const StyledIcon = styled(Icon)`
-  // layout: fill;
-  // position: relative;
-  //layout: fill;
-  //object-fit:contain;
   position: relative;
   height: 100px;
   width: 100px;
-  //z-index:100;
+  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 // const StyledIcon_circle___hover = styled(StyledIcon___hover)`

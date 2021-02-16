@@ -71,10 +71,17 @@ const Greeting_container = styled.div`
   margin-left: 5%;
   margin-right: 5%;
   z-index: 10;
+  text-shadow: 1px 1px #999999;
 `;
 const Container = styled.div`
   display: block;
 `;
+const Span = styled.span`
+  color: #0ad1a1;
+  font-weight: 700;
+  font-size: 25px;
+
+`
 const MainContent = ({ page }) => {
   //const [page, setPage] = useState(props.page);
   // const page = usePageState();
@@ -93,7 +100,7 @@ const MainContent = ({ page }) => {
       <Main_container>
         <Greeting_container>
           <Greeting page={page} style={transitions}>
-            Hello, I'm Lucas
+            <Span style="color: red">Hello</Span>, I'm Lucas
           </Greeting>
         </Greeting_container>
         <Card_container>
