@@ -56,11 +56,11 @@ const Navbar = (props) => {
           Home
         </Link>
         <Line></Line>
-        <Link active={about} id="changeColor" link="/AboutMe" linkName="About">
+        <Link active={about} id="changeColor" link="/about" linkName="About">
           About Me
         </Link>
         <Line></Line>
-        <Link active={blog} id="changeColor" link="/Blog" linkName="Blog">
+        <Link active={blog} id="changeColor" link="/blog" linkName="Blog">
           Blog
         </Link>
       </Nav>
