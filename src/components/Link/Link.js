@@ -1,7 +1,8 @@
 import nextLink from "next/link";
+import { useRouter } from 'next/router'
 import styled from "styled-components";
 import React, { useState } from "react";
-import { usePageState, usePageDispatch } from "../../page-context.js";
+
 
 const StyledLink = styled.a`
   // color: white;
@@ -12,32 +13,19 @@ const StyledLink = styled.a`
   // margin-top 20px;
   font-size: 1em;
 `;
-const NextLink = styled(nextLink)`
-    display: flex; 
-    flex-direction: column
-    justify-content: center;`;
 
-const Link = (props) => {
-  const [active, setActive] = useState(props.active);
+const Link = ({ children, href }) => {
+  const router = useRouter()
   // console.log(props.active)
   const handleClick = (e) => {
     // console.log("clicked " + props.linkName)
-    const pageName = props.linkName.toLowerCase();
-    dispatch({ type: pageName });
-    setActive({ active: true });
+    router.push(href)
   };
 
-  console.log("home is: " + active);
-
   return (
-    <NextLink
-      active={active}
-      onClick={() => handleClick()}
-      href={props.link}
-      passHref
-    >
-      <StyledLink active={active}>{props.children}</StyledLink>
-    </NextLink>
+      <StyledLink onClick={handleClick} href={href}>
+        {children}
+      </StyledLink>
   );
 };
 export default Link;

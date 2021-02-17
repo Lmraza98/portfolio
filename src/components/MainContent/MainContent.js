@@ -88,21 +88,12 @@ const MainContent = ({ page }) => {
   // useEffect(() => {
   //     setPage(props.page)
   // });
-  const transitions = useSpring({
-    config: { tension: 70 },
-    from: { transform: "translateX(-120%)", opacity: 0 },
-    to: { transform: "translateY(0)", opacity: 1 },
-    delay: 0,
-  });
+
 
   return (
     <Container>
       <Main_container>
-        <Greeting_container>
-          <Greeting page={page} style={transitions}>
-            <Span style="color: red">Hello</Span>, I'm Lucas
-          </Greeting>
-        </Greeting_container>
+        
         <Card_container>
           <MainCard />
           <GroupCards>

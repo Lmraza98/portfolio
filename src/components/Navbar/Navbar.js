@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "../Link/Link.js";
-import NavbarLink from "./NavbarLink.js";
 import Logo from "../Logo/Logo.js";
+import { useRouter } from 'next/router'
 import { usePageState, usePageDispatch } from "../../page-context.js";
 <style>
   @import
@@ -30,37 +30,20 @@ const Nav = styled.div`
   align-items: center;
 `;
 const Navbar = (props) => {
-  const { page } = usePageState();
-  console.log(page);
-  let home, about, blog;
-  if (page === "home") {
-    home = true;
-    about = false;
-    blog = false;
-  } else if (page === "about") {
-    about = true;
-    home = false;
-    blog = false;
-  } else if (page === "blog") {
-    blog = true;
-    home = false;
-    about = false;
-  } else if (page === undefined) {
-    console.log("page context is undefined");
-  }
+  const router = useRouter()
   return (
     <Navbar_container>
       <StyledLogo />
       <Nav>
-        <Link active={home} link="/" linkName="Home">
+        <Link href="/">
           Home
         </Link>
         <Line></Line>
-        <Link active={about} id="changeColor" link="/about" linkName="About">
+        <Link href="/about">
           About Me
         </Link>
         <Line></Line>
-        <Link active={blog} id="changeColor" link="/blog" linkName="Blog">
+        <Link href="/blog">
           Blog
         </Link>
       </Nav>
