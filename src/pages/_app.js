@@ -1,13 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
+import GlobalStyle from '../styles/global'
 
 import "../styles.css";
-import { PageProvider } from "../page-context.js";
 
-const MyApp = ({ Component, pageProps }) => {
-  return (
-    <PageProvider>
-      <Component {...pageProps} />
-    </PageProvider>
-  );
-};
+export const MyApp = ({ Component, pageProps }) => (
+  <>
+    <GlobalStyle/>
+    <Component {...pageProps}/>
+  </>
+  
+);
+
+
+// MyApp.getInitialProps = async (appContext) => {
+//   // calls page's `getInitialProps` and fills `appProps.pageProps`
+//   const appProps = await App.getInitialProps(appContext);
+
+//   return { ...appProps }
+// }
+
+
 export default MyApp;

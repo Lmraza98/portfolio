@@ -16,19 +16,24 @@
     "emotion": "^11.0.0",
     "fs": "0.0.1-security",
     "next": "10.0.3",
+    "next-useragent": "^2.4.0",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dat-gui": "^4.0.3",
+    "react-device-detect": "^1.15.0",
     "react-dom": "^16.14.0",
     "react-fluid-animation": "^1.0.1",
     "react-is": "^16.13.1",
+    "react-sidebar": "^3.0.2",
     "react-spring": "^9.0.0-rc.3",
     "react-transition-group": "^1.2.1",
     "react-trianglify": "^2.0.5",
     "sass": "^1.30.0",
     "styled-components": "^5.2.1",
-    "trianglify": "^4.1.1"
+    "styled-reset": "^4.3.4",
+    "trianglify": "^4.1.1",
+    "ua-parser-js": "^0.7.24"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.12.0"

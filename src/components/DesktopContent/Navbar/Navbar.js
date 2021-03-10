@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Link from "../Link/Link.js";
-import Logo from "../Logo/Logo.js";
+import Link from "./Link.js";
+import Logo from "./Logo.js";
 import { useRouter } from 'next/router'
-import { usePageState, usePageDispatch } from "../../page-context.js";
 <style>
   @import
   url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>;
 const StyledLogo = styled(Logo)``;
 const Navbar_container = styled.div`
-  height: 10%;
+  height: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  top: 0;
+  //top: 0;
   z-index: 5;
+  padding-top: 1rem
 `;
 const Line = styled.div`
   width: 1px;
