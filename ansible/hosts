@@ -1,0 +1,2 @@
+[lucasraza]
+lucasraza ansible_connection=ssh ansible_user=lmraza98

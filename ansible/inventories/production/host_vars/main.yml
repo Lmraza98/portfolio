@@ -1,0 +1,20 @@
+---
+domain_name: lucasraza.com
+ansible_user: lmraza98
+ansible_ssh_private_key_file: ~/.ssh/linode
+ansible_sudo_pass: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          35633130363032653739343434383361346231643737333165353765353432313933313937613830
+          3865333634393864336561626438376233306233346438650a393239363063323837643263386530
+          39626139373566643039386436663938356363653238366432623734646538353836383132636566
+          3838376338366661370a353532626265386131666333346262323564666662653663656330636136
+          3330
+acme_challenge_type: http-01
+acme_directory: https://acme-v02.api.letsencrypt.org/directory
+acme_version: 2
+acme_email: lmraza98@gmail.com
+letsencrypt_dir: /etc/letsencrypt
+letsencrypt_keys_dir: /etc/letsencrypt/keys
+letsencrypt_csrs_dir: /etc/letsencrypt/csrs
+letsencrypt_certs_dir: /etc/letsencrypt/certs
+letsencrypt_account_key: /etc/letsencrypt/account/account.key
