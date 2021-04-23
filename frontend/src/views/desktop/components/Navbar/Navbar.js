@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Link from "./Link.js";
-import Logo from "./Logo.js";
+import Link from "../Link/Link.js";
+import Logo from "../Logo/Logo.js";
 import { useRouter } from 'next/router'
 <style>
   @import

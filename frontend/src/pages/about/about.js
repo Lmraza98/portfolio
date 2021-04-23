@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Image from "next/image";
 import React from "react";
-import Navbar from '../components/DesktopContent/Navbar/Navbar.js'
+import Navbar from '../../views/desktop/components/Navbar/Navbar.js'
 
 const About_container = styled.div`
 `

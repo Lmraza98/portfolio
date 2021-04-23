@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Navbar from '../components/DesktopContent/Navbar/Navbar.js'
+import Navbar from '../../views/desktop/components/Navbar/Navbar.js'
 
 const Blog_container = styled.div`
 

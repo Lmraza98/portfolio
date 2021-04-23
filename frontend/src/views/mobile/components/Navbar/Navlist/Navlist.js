@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-import Link from "./Link.js";
+import Link from "../../Link/Link.js";
 
 const Sidebar_container = styled.div`
     display: flex;

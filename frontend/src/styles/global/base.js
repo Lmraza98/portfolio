@@ -1,4 +1,17 @@
 import { css } from 'styled-components'
+
+const primaryColor = '#'
+const secondaryColor = '#'
+
+const bodyBackground = '#'
+const bodyPrimaryTextColor = '#'
+const bodySecondaryTextColor = '#'
+const bodyLinkColor = '#'
+
+const headerTextColor = '#'
+const primaryTextColor = '#'
+const linkTextColor = '#'
+const italicTextColor = '#'
  
 export default css`
   html,

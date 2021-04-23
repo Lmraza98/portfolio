@@ -1,15 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import Logo from "./Logo.js";
+import Logo from "../Logo";
 import { useRouter } from 'next/router'
-import Navlist from './Navlist.js'
-import Sidebar from "../Sidebar.js"
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-</style>;
-
-
+import Navlist from './Navlist/Navlist'
+import Sidebar from "../Sidebar"
 
 const Navbar = (props) => {
     const [ sidebarOpen, onSetSidebarOpen ] = useState(false)

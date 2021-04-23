@@ -4,5 +4,8 @@ module.export = {
         config.module.rules.push({
             test
         })
+    },
+    future: {
+    webpack5: true
     }
 }
