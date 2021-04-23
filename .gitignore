@@ -3,3 +3,6 @@ node_modules/
 .env/
 .env.build/
 *vault_pass*
+vault_pass.txt
+*vault_pass.txt*
+
