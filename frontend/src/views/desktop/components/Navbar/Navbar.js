@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Link from "../Link/Link";
-import Logo from "../Logo/Logo";
-import Line from './Line';
+import Link from "../Link";
+import Logo from "../Logo";
+import {Line} from './Line';
 import { Navbar_container, Nav } from './styled'
 <style>
   @import
   url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>;
 
-const Navbar = (props) => {
+const Desktop_Navbar = (props) => {
   return (
     <Navbar_container>
       <Logo />
@@ -29,4 +29,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export { Desktop_Navbar };

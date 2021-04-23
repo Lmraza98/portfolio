@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export default StyledLogo = styled.div`
+export const StyledLogo = styled.div`
   font-size: 2em;
   color: #0ad1a1;
   @font-face {

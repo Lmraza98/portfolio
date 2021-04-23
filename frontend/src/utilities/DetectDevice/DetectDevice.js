@@ -27,7 +27,7 @@ const deviceInfo = {
         desktop: isDesktop ? isDesktop : false,
         mobile: isMobile ? isMobile : false,
         tablet: isTablet ? isTablet : false,
-        other: ( (desktop !== false) || (mobile !== false) || (tablet !== false) ? false: true)
+        other: ( (isDesktop !== false) || (isMobile !== false) || (isTablet !== false) ? false: true)
     }
 }
 
