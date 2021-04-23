@@ -1,39 +1,17 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import Link from "../Link/Link.js";
-import Logo from "../Logo/Logo.js";
-import { useRouter } from 'next/router'
+import Link from "../Link/Link";
+import Logo from "../Logo/Logo";
+import Line from './Line';
+import { Navbar_container, Nav } from './styled'
 <style>
   @import
   url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>;
-const StyledLogo = styled(Logo)``;
-const Navbar_container = styled.div`
-  height: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  //top: 0;
-  z-index: 5;
-  padding-top: 1rem
-`;
-const Line = styled.div`
-  width: 1px;
-  height: 60px;
-  background-color: #a9a9a9;
-  margin: 10px;
-`;
-const Nav = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
+
 const Navbar = (props) => {
-  const router = useRouter()
   return (
     <Navbar_container>
-      <StyledLogo />
+      <Logo />
       <Nav>
         <Link href="/">
           Home

@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from './styled.js'
 
-export default function Footer() {
+export default function TabletLayout() {
     return (
         <div>
             
