@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
 import Head from 'next/head'
 import App from 'next/app'
-import { GlobalStyle } from '../src/global/styles'
-import GlobalContext from '../src/global/contexts'
-import DetectDevice from '../src/utilities/DetectDevice'
-import { lightTheme, darkTheme } from '../src/global/styles/theme.js'
+// import { GlobalStyle } from '../src/global/styles'
+// import GlobalContext from '../src/global/contexts'
 
 // const globalContext = {
 //   theme: ,
@@ -15,9 +13,9 @@ import { lightTheme, darkTheme } from '../src/global/styles/theme.js'
 
 export const MyApp = ({ Component, pageProps }) => (
   
-    <GlobalContext.Provider>
+    // <GlobalContext.Provider>
       <Component {...pageProps}/>
-    </GlobalContext.Provider>
+    // </GlobalContext.Provider>
 );
 
 export default MyApp;

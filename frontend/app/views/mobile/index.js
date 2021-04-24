@@ -1,27 +1,31 @@
-import { HomeMobileLayout, BlogMobileLayout, AdminMobileLayout } from './layouts'
-import { HomeMobileTemplate, BlogMobileTemplate, AdminMobileTemplate } from './templates'
+import { HomeLayout, BlogLayout, AdminLayout } from './components/layouts'
+import { HomeTemplate, BlogTemplate, AdminTemplate } from './components/templates'
 
-const HomeMobileView = (props) => {
-    <HomeMobileLayout>
-        <HomeMobileTemplate>
-
-        </HomeMobileTemplate>
-    </HomeMobileLayout>
+function HomeMobileView() {
+    return (
+        <HomeLayout>
+            <HomeTemplate>
+            </HomeTemplate>
+        </HomeLayout>
+    )
 }
-const BlogMobileView = (props) => {
-    <BlogMobileLayout>
-        <BlogMobileTemplate>
-
-        </BlogMobileTemplate>
-    </BlogMobileLayout>
+function BlogMobileView() {
+    return (
+        <BlogLayout>
+            <BlogTemplate>
+            </BlogTemplate>
+        </BlogLayout>
+    )
 }
 
-const AdminMobileView = (props) => {
-    <AdminMobilelayout>
-        <AdminMobileTemplate>
-
-        </AdminMobileTemplate>
-    </AdminMobilelayout>
+function AdminMobileView(){
+    return (
+        <AdminLayout>
+            <AdminTemplate>
+            </AdminTemplate>
+        </AdminLayout>
+    )
+    
 }
 
 export { HomeMobileView, BlogMobileView, AdminMobileView }

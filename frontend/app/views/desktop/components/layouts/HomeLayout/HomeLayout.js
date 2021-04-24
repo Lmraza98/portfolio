@@ -1,13 +1,21 @@
 import { Navbar, Footer } from '../../modules'
-import StyledHomeLayout from './styled.js'
-const HomeLayout = ({children}) => {
-    <>
-        <Navbar/>   
-            <StyledHomeLayout>
-                {children}
-            </StyledHomeLayout>
-        <Footer/>
-    </>
+import styled from 'styled-components'
+
+const StyledHomeLayout = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+function HomeLayout({children}){
+    return (
+        <div>
+            <Navbar/>   
+                <StyledHomeLayout>
+                    {children}
+                </StyledHomeLayout>
+            <Footer/>
+        </div>
+    )
+    
 }
 
 export { HomeLayout }

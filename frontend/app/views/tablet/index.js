@@ -1,27 +1,31 @@
-import { HomeTabletLayout, BlogTabletLayout, AdminTabletLayout } from './layouts'
-import { HomeTabletTemplate, BlogTabletTemplate, AdminTabletTemplate } from './templates'
+import { HomeLayout, BlogLayout, AdminLayout } from './components/layouts'
+import { HomeTemplate, BlogTemplate, AdminTemplate } from './components/templates'
 
-const HomeTabletView = (props) => {
-    <HomeTabletLayout>
-        <HomeTabletTemplate>
-
-        </HomeTabletTemplate>
-    </HomeTabletLayout>
+function HomeTabletView() {
+    return (
+        <HomeLayout>
+            <HomeTemplate>
+            </HomeTemplate>
+        </HomeLayout>
+    )
 }
-const BlogTabletView = (props) => {
-    <BlogTabletLayout>
-        <BlogTabletTemplate>
-
-        </BlogTabletTemplate>
-    </BlogTabletLayout>
+function BlogTabletView() {
+    return (
+        <BlogLayout>
+            <BlogTemplate>
+            </BlogTemplate>
+        </BlogLayout>
+    )
 }
 
-const AdminTabletView = (props) => {
-    <AdminTabletlayout>
-        <AdminTabletTemplate>
-
-        </AdminTabletTemplate>
-    </AdminTabletlayout>
+function AdminTabletView(){
+    return (
+        <AdminLayout>
+            <AdminTemplate>
+            </AdminTemplate>
+        </AdminLayout>
+    )
+    
 }
 
 export { HomeTabletView, BlogTabletView, AdminTabletView }

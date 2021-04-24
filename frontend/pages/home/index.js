@@ -1,14 +1,13 @@
-import { DesktopHomeView, MobileHomeView, TabletHomeView } from '../../app/views'
-import HomeDesktopLayout from '../../app/views/desktop/components/layouts/HomeLayout'
-import HomeMobileLayout from '../../app/views/mobile/components/layout/HomeLayout'
+import dynamic from 'next/dynamic'
+import isMobile from '../../app/utilities/isMobile'
 
-const Home = (props) => {
-  return (
-    <Main_container>
-      <Desktop_Navbar/>
-    </Main_container>
-  )
-    
-};
+const HomeDesktopView = dynamic (() => import('../../app/views/desktop').then( (mod) => (mod.HomeDesktopView ) ))
+const HomeMobileView = dynamic (() => import('../../app/views/mobile').then( (mod) => (mod.HomeDesktopView ) ))
 
-export default Home;
+function HomePage (props) {
+  const isMobileDevice = isMobile();
+
+  return (isMobileDevice ? <HomeMobileView/> : <HomeDesktopView/>)
+}
+
+export default HomePage;

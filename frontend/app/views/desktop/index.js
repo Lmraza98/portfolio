@@ -1,27 +1,29 @@
-import { HomeDesktopLayout, BlogDesktopLayout, AdminDesktopLayout } from './layouts'
-import { HomeDesktopTemplate, BlogDesktopTemplate, AdminDesktopTemplate } from './templates'
+import { HomeLayout, BlogLayout, AdminLayout } from './components/layouts'
+import { HomeTemplate, BlogTemplate, AdminTemplate } from './components/templates'
 
-const HomeDesktopView = (props) => {
-    <HomeDesktopLayout>
-        <HomeDesktopTemplate>
-
-        </HomeDesktopTemplate>
-    </HomeDesktopLayout>
+export function HomeDesktopView() {
+    return (
+        <HomeLayout>
+            <HomeTemplate>
+            </HomeTemplate>
+        </HomeLayout>
+    )
 }
-const BlogDesktopView = (props) => {
-    <BlogDesktopLayout>
-        <BlogDesktopTemplate>
-
-        </BlogDesktopTemplate>
-    </BlogDesktopLayout>
-}
-
-const AdminDesktopView = (props) => {
-    <AdminDesktoplayout>
-        <AdminDesktopTemplate>
-
-        </AdminDesktopTemplate>
-    </AdminDesktoplayout>
+export function BlogDesktopView() {
+    return (
+        <BlogLayout>
+            <BlogTemplate>
+            </BlogTemplate>
+        </BlogLayout>
+    )
 }
 
-export { HomeDesktopView, BlogDesktopView, AdminDesktopView }
+export function AdminDesktopView(){
+    return (
+        <AdminLayout>
+            <AdminTemplate>
+            </AdminTemplate>
+        </AdminLayout>
+    )
+    
+}

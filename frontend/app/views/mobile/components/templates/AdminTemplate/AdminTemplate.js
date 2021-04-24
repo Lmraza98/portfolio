@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-const HomeTemplate = styled.div`
+const AdminTemplate = styled.div`
     display: grid;
 `
  
-export default HomeTemplate 
+export default AdminTemplate 

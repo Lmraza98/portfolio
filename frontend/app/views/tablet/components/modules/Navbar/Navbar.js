@@ -7,8 +7,7 @@ import { Navbar_container, Nav } from './styled'
   @import
   url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 </style>;
-
-const Desktop_Navbar = (props) => {
+function Desktop_Navbar(props) {
   return (
     <Navbar_container>
       <Logo />
