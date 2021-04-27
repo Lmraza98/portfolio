@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from "react";
-import Link from "../../../../shared/components/elements/Link";
+import PageLink from "../../elements/PageLink";
 import Logo from "../../elements/Logo";
-import { Line } from '../../elements/Line';
-import styled from "styled-components";
-import GlobalStyles from '.'
+import { theme, ThemeContext } from '../../../../shared/styles/ThemeContext/ThemeContext.js'
 
 const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
-  background-color: #013948;
-  padding: 5px;
+  background-color: var(--color-background);
 `;
 
-const Nav = styled.div`
+const NavGrid = styled.div`
   height: 64px;
   width: 100%;
   display: inline-grid;
   align-items: center;
-  grid-template-columns:  100px 300px auto 100px 100px 100px 100px;
-  grid-template-rows: 100%;
+  grid-template-columns:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 50% 50%;
 `;
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-</style>;
 
 const LogoGridItem = styled.div`
   grid-column-start: 2;
@@ -34,6 +27,7 @@ const HomeLinkGridItem = styled.div`
   grid-column-start: 4;
   grid-column-end: 5;
   justify-self: center;
+  
 `
 const AboutLinkGridItem = styled.div`
   grid-column-start: 5;
@@ -49,26 +43,28 @@ const BlogLinkGridItem = styled.div`
 const Desktop_Navbar = (props) => {
   return (
     <Navbar_container>
-      <Nav>
-        {/* <LogoGridItem>
-          <Logo />
-        </LogoGridItem> */}
+      <NavGrid>
         <HomeLinkGridItem>
-          <Link href="/">
+          <PageLink href="/home">
             Home
-          </Link>
+          </PageLink>
         </HomeLinkGridItem>
         <AboutLinkGridItem>
-          <Link href="/about">
+          <PageLink href="/about">
             About Me
-          </Link> 
+          </PageLink> 
         </AboutLinkGridItem>
         <BlogLinkGridItem>
-          <Link href="/blog">
-            Blog
-          </Link>
+            <PageLink href="/blog">
+              Blog
+            </PageLink>
         </BlogLinkGridItem>
-      </Nav>
+        <ThemeContext.Consumer>
+          {theme=>
+            <Toggle theme={theme} onChange={handleClick}/>
+          }
+        </ThemeContext.Consumer>
+      </NavGrid>
     </Navbar_container>
   );
 };

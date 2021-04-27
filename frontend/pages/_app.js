@@ -1,21 +1,15 @@
-import React, { useContext } from "react";
-import Head from 'next/head'
+import React from "react";
 import App from 'next/app'
-// import { GlobalStyle } from '../src/global/styles'
-// import GlobalContext from '../src/global/contexts'
-
-// const globalContext = {
-//   theme: ,
-//   isBrowser: isBrowser,
-//   isMobile: isMobile
-// }}
-// }
+import GlobalStyle from '../app/views/shared/styles/GlobalStyle'
+import { theme, ThemeContext } from '../app/views/shared/styles/ThemeContext/ThemeContext'
 
 export const MyApp = ({ Component, pageProps }) => (
-  
-    // <GlobalContext.Provider>
-      <Component {...pageProps}/>
-    // </GlobalContext.Provider>
+  <>
+      <ThemeContext>
+          <GlobalStyle/>
+        <Component {...pageProps}/>
+      </ThemeContext>
+  </>
 );
 
 export default MyApp;
