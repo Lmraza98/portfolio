@@ -4,30 +4,30 @@ import { ThemeProvider as Theme } from "styled-components";
 import { useContext } from 'react'
 import { ThemeContext, ThemeProvider } from '../app/views/shared/styles/ThemeContext'
 import { lightMode, darkMode } from '../app/views/shared/styles/Theme'
+
+import Loading from '../app/views/shared/components/templates/Loading'
+
 const StyledTheme = ({children}) => 
 {
   const { theme } = useContext(ThemeContext)
 
-  console.log(" ThemeContext: " + JSON.stringify(theme))
   return (
-    <Theme theme={theme === 'light' ? lightMode : darkMode}>
-    {
+    <Theme theme={theme === 'light' ? lightMode : darkMode}>{
       children
-    }
-    </Theme>
+    }</Theme>
   )
 }
 export default function MyApp({ Component, pageProps }) {
-  // let [isMounted, setIsMounted] = useState(false)
-  // useEffect(() => {
-  //   setIsMounted(true)
-  // })
+  let [isMounted, setIsMounted] = useState(false)
+  useEffect(() => {
+    setIsMounted(true)
+  })
   
   return (
     <>
       <ThemeProvider>
           <StyledTheme>
-            <Component {...pageProps}/> 
+            {isMounted ? <Component {...pageProps}/> : <Loading/>}
           </StyledTheme>
       </ThemeProvider>
     </>

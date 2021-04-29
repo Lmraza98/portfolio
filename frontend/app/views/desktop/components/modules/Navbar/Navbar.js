@@ -16,8 +16,7 @@ const NavGrid = styled.div`
   width: 100%;
   display: inline-grid;
   align-items: center;
-  grid-template-columns:  10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: repeat(9, 1fr);
 `;
 
 const LogoGridItem = styled.div`

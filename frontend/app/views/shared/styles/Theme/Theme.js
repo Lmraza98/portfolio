@@ -14,7 +14,7 @@ const lightColors = {
     headerColor: '#000000'
 }
 const darkColors = {
-    backgroundColor: '#000000',
+    backgroundColor: '#013948',
     navBackgroundColor: '#0B3C49',
     navLinkColor: '#FFFFFF',
     pageLinkColor: '#B2B2B2',
