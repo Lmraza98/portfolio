@@ -1,3 +1,3 @@
-import { lightMode, darkMode, ThemeContext } from './ThemeContext'
+import { ThemeContext, ThemeDispatchContext, ThemeProvider } from './ThemeContext'
 
-export default { lightMode, darkMode, ThemeContext}
+export { ThemeContext, ThemeDispatchContext, ThemeProvider }

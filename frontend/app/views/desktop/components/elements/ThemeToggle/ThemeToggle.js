@@ -1,18 +1,33 @@
+import { useContext, useState } from 'react'
 import Toggle from '../Toggle'
-import styled from 'styled-components'
-import { lightMode, darkMode, ThemeContext } from '../../../../shared/styles/ThemeContext'
-export default function ThemeToggle(props){
+import { ThemeContext, ThemeDispatchContext } from '../../../../shared/styles/ThemeContext'
 
-    let [theme, setTheme] = useContext(ThemeContext)
-      
-    const toggleTheme = () => {
-        const mode = theme.mode === "light" ? darkMode : lightMode
-        setTheme(mode)
+
+export default function ThemeToggle(){
+
+    const { theme } = useContext(ThemeContext)
+    const setTheme = useContext(ThemeDispatchContext)
+    
+    console.log("Theme from ThemeToggle.js: " + theme)
+    
+    const checkedBool = theme === "light" ? false : true
+    let [ checked, setChecked ] = useState(checkedBool)
+
+    const toggle = (checked) => {
+        console.log("toggle checked value: " + checked)
+    
+        if(checked)
+        {
+            setTheme({theme: "light"})
+        }
+        else{
+            setTheme({theme: "dark"})
+        }
+        setChecked()
+        
     }
 
     return (
-        <ThemeToggle>
-            <Toggle value={theme} toggle={toggleTheme}/>
-        </ThemeToggle>
+        <Toggle checked={checked} onChange={toggle}/>
     )
 }

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import PageLink from "../../elements/PageLink";
 import Logo from "../../elements/Logo";
 import { theme, ThemeContext } from '../../../../shared/styles/ThemeContext/ThemeContext.js'
+import ThemeToggle from '../../elements/ThemeToggle'
+import styled from 'styled-components'
 
 const Navbar_container = styled.div`
   width: 100%;
@@ -59,11 +61,7 @@ const Desktop_Navbar = (props) => {
               Blog
             </PageLink>
         </BlogLinkGridItem>
-        <ThemeContext.Consumer>
-          {theme=>
-            <Toggle theme={theme} onChange={handleClick}/>
-          }
-        </ThemeContext.Consumer>
+        <ThemeToggle/>
       </NavGrid>
     </Navbar_container>
   );

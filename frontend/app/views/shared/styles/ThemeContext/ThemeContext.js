@@ -1,54 +1,25 @@
-import { ThemeProvider as Provider } from 'styled-components';
-import React from 'react'
+import React, { useState } from "react"
 
-const theme = {
-    navLinkTextSize: '12px',
-    textSize: '12px',
-    h1TextSize: '20px',
-    h2TextSize: '18px',
-    h3TextSize: '16px'
-}
-const lightColors = {
-    backgroundColor: '#FFFDFD',
-    navBackgroundColor: '#FFFDFD ',
-    navLinkColor: '#000000',
-    pageLinkColor: '#0B3C49',
-    textColor: '#000000',
-    headerColor: '#000000'
-}
-const darkColors = {
-    backgroundColor: '#000000',
-    navBackgroundColor: '#0B3C49',
-    navLinkColor: '#FFFFFF',
-    pageLinkColor: '#B2B2B2',
-    textColor: 'blue',
-    headerColor: '#ffffff'
-}
-export const lightMode = {
-    mode: "light",
-    theme,
-    ...lightColors
-}
-export const darkMode = {
-    mode: "dark",
-    theme,
-    ...darkColors
-}
+export const ThemeContext = React.createContext(undefined)
+export const ThemeDispatchContext = React.createContext(undefined)
 
-export const ThemeContext = React.createContext({
-        theme: {theme, ...lightColors},
-        setTheme: () => {},
-})
-
-
-// export const ThemeContext = ({children}) => {
-//     const { value } = useDarkMode(false);
-
-//     const colors = value ? Theme.darkColors : Theme.lightColors
-//     const theme = { theme, ...colors }
+export function ThemeProvider({children}){
+    const [theme, setTheme] = useState({
+        theme: "light"
+    })
+    // console.log("theme: " + state)
+    return (
+        <ThemeContext.Provider value={theme}>
+            <ThemeDispatchContext.Provider value={setTheme}>
+            {children}
+            </ThemeDispatchContext.Provider>
+        </ThemeContext.Provider>
+    )
+}
+// export function ThemeContextConsumer({children}) {
 //     return (
-//         <Provider theme>
-//             {children}
-//         </Provider>
+//         <ThemeContext.Consumer>{
+//             (theme, setTheme) => children(theme, setTheme)
+//         }</ThemeContext.Consumer>
 //     )
 // }

@@ -43,14 +43,15 @@ const CheckBox = styled.input`
     }
   }
 `;
-export default function Toggle(props) {
+export default function Toggle({checked, onChange}) {
+  
     return (
         <CheckBoxWrapper>
             <CheckBox 
                 id="checkbox" 
                 type="checkbox"
-                value={props.value}
-                onChange={props.toggle} />
+                checked={checked}
+                onChange={e => onChange(e.target.checked)} />
             <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>
     )
