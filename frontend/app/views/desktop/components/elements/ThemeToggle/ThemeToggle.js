@@ -10,21 +10,12 @@ export default function ThemeToggle(){
     
     console.log("Theme from ThemeToggle.js: " + theme)
     
-    const checkedBool = theme === "light" ? false : true
+    const checkedBool = (theme === "light" ? false : true)
     let [ checked, setChecked ] = useState(checkedBool)
 
     const toggle = (checked) => {
-        console.log("toggle checked value: " + checked)
-    
-        if(checked)
-        {
-            setTheme({theme: "light"})
-        }
-        else{
-            setTheme({theme: "dark"})
-        }
+        setTheme(theme === 'light' ? {theme: "dark"} : {theme: "light"})
         setChecked()
-        
     }
 
     return (

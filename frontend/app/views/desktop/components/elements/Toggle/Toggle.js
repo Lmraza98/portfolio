@@ -50,7 +50,8 @@ export default function Toggle({checked, onChange}) {
             <CheckBox 
                 id="checkbox" 
                 type="checkbox"
-                checked={checked}
+                // defaultValue={checked}
+                value={checked}
                 onChange={e => onChange(e.target.checked)} />
             <CheckBoxLabel htmlFor="checkbox" />
         </CheckBoxWrapper>

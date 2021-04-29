@@ -8,7 +8,7 @@ import styled from 'styled-components'
 const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
-  background-color: var(--color-background);
+  background-color: ${props => props.theme.backgroundColor};
 `;
 
 const NavGrid = styled.div`
