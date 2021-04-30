@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import Toggle from '../Toggle'
-import { ThemeContext, ThemeDispatchContext } from '../../../../shared/styles/ThemeContext'
+import { ThemeContext, ThemeDispatchContext } from '../../../../../contexts/ThemeContext'
 
 
 export default function ThemeToggle(){

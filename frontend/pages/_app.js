@@ -2,8 +2,9 @@ import React, { useState, useEffect, useMemo} from "react";
 import App from 'next/app'
 import { ThemeProvider as Theme } from "styled-components";
 import { useContext } from 'react'
-import { ThemeContext, ThemeProvider } from '../app/views/shared/styles/ThemeContext'
+import { ThemeContext, ThemeProvider } from '../app/contexts/ThemeContext'
 import { lightMode, darkMode } from '../app/views/shared/styles/Theme'
+import { GlobalStyle } from '../app/views/shared/styles/GlobalStyle/GlobalStyle.js'
 
 import Loading from '../app/views/shared/components/templates/Loading'
 
@@ -25,10 +26,11 @@ export default function MyApp({ Component, pageProps }) {
   
   return (
     <>
+      <GlobalStyle/>
       <ThemeProvider>
-          <StyledTheme>
-            {isMounted ? <Component {...pageProps}/> : <Loading/>}
-          </StyledTheme>
+        <StyledTheme>
+          {isMounted ? <Component {...pageProps}/> : <Loading/>}
+        </StyledTheme>
       </ThemeProvider>
     </>
   )

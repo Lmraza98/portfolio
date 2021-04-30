@@ -6,17 +6,17 @@ import styled from "styled-components";
 const StyledLink = styled.a
 `
   text-decoration: none;
-
-  color: ${ props => props.theme.pageLinkColor };
-  font-family: ${ props => props.theme.font };
-  font-size: ${ props => props.theme.font };
-
+  color: ${ props => props.theme.navLinkColor };
+  font-family: "${ props => props.theme.navFont}";
+  font-size: ${ props => props.theme.h1TextSize };
 `
 const PageLink = ({ children, href }) => {
   return (
       <Link href={href} passHref>
         <StyledLink>
-        {children}
+        {
+          children
+        }
         </StyledLink>
       </Link>
   );

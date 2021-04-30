@@ -7,7 +7,7 @@ const Navbar_container = styled.div`
   justify-content: space-around;
   //top: 0;
   z-index: 5;
-  padding-top: 1rem
+  // padding-top: 1rem
 `;
 
 const Nav = styled.div`

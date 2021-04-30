@@ -4,16 +4,14 @@ import { HomeTemplate, BlogTemplate, AdminTemplate } from './components/template
 export function HomeDesktopView() {
     return (
         <HomeLayout>
-            <HomeTemplate>
-            </HomeTemplate>
+            <HomeTemplate/>
         </HomeLayout>
     )
 }
 export function BlogDesktopView() {
     return (
         <BlogLayout>
-            <BlogTemplate>
-            </BlogTemplate>
+            <BlogTemplate/>
         </BlogLayout>
     )
 }
@@ -21,8 +19,7 @@ export function BlogDesktopView() {
 export function AdminDesktopView(){
     return (
         <AdminLayout>
-            <AdminTemplate>
-            </AdminTemplate>
+            <AdminTemplate/>
         </AdminLayout>
     )
     

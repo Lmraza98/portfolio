@@ -1,11 +1,19 @@
-import React, { Component } from "react";
-import {StyledLogo} from './styled.js' 
-<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-</style>;
+import React, { useContext } from "react";
+import Image from 'next/image'
+import styled from "styled-components";
+import { ThemeContext } from '../../../../../contexts/ThemeContext'
 
-const Logo = () => {
-  return <StyledLogo>Lucas Raza</StyledLogo>;
+const LogoWhite = () => {
+  return <Image src="/logo/logo-white.png" alt='LR logo' width="75" height="75"/>;
 };
+const LogoBlack = () => {
+  return <Image src="/logo/logo-black.png" alt='LR Logo' width="75" height="75"/>;
+}
+export default function Logo(){
+  const { theme } = useContext(ThemeContext)
+  const Logo = theme === 'light' ? <LogoBlack/> : <LogoWhite/> 
+  return (
+    Logo
+  )
+}
 export { Logo };
