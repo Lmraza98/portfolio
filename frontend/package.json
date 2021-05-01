@@ -28,7 +28,7 @@
     "react-is": "^16.13.1",
     "react-scroll": "^1.8.2",
     "react-sidebar": "^3.0.2",
-    "react-spring": "^9.0.0-rc.3",
+    "react-spring": "^9.1.2",
     "react-transition-group": "^1.2.1",
     "react-trianglify": "^2.0.5",
     "sass": "^1.30.0",

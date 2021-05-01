@@ -30,6 +30,7 @@ const ContactGridItem = styled(Contact)`
 function HomeLayout({children}){
     return (
         <HomeLayoutContainer>
+            
             <Navbar/>
             <HomeSectionFlexContainer>
                 <GreetingsGridItem/>

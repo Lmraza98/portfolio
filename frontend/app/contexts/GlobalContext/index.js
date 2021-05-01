@@ -1,7 +1,3 @@
-import React from 'react'
-import Device from '../../utilities/isMobile'
+import { GlobalContext, GlobalDispatchContext, GlobalProvider } from './GlobalContext'
 
-
-const GlobalContext = React.createContext({
-    
-})
+export { GlobalContext, GlobalDispatchContext, GlobalProvider }
