@@ -3,11 +3,13 @@ import React, { useState } from "react"
 export const GlobalContext = React.createContext(undefined)
 export const GlobalDispatchContext = React.createContext(undefined)
 
-export function GlobalProvider({children}){
+export function GlobalProvider({children, isMounted}){
     const [global, setGlobal] = useState({
-        loaded: false,
+        mounted: isMounted,
         theme: 'light'
     })
+
+    
 
     return (
         <GlobalContext.Provider value={global}>

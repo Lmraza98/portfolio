@@ -1,7 +1,7 @@
 import { useTransition, animated } from 'react-spring'
 
-export const Transition = ({children}) => {
-    const transitions = useTransition((items), {
+export const Transition = ({item}) => {
+    const transitions = useTransition(item, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
         delay: 200,
@@ -19,7 +19,7 @@ export const Transition = ({children}) => {
                 .to(item.trans)
                 .to(y => `translate3d(0,${y}px,0)`),
             }}>
-            {children}
+            {item}
             </animated.div>
             ))
         }

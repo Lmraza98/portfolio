@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react'
 import Toggle from '../Toggle'
 import { GlobalContext, GlobalDispatchContext } from '../../../../../contexts/GlobalContext'
-import { GlobalProvider } from '../../../../../contexts/GlobalContext/GlobalContext'
 
 
 export default function ThemeToggle(){
