@@ -2,6 +2,7 @@ import { Navbar, Greetings, About, Experience, Work, Contact, Footer } from '../
 import styled from 'styled-components'
 const HomeLayoutContainer = styled.div`
     width: 100%;
+    background-color: ${(props) => {props.theme.backgroundColor}}
 `
 const HomeSectionFlexContainer = styled.div`
     display: flex;

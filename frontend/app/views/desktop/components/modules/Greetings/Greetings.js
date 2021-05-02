@@ -1,24 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ScrollElement } from '../../elements/ScrollElement'
+import { ProfileCard, Chat,  ScrollLine, ScrollElement } from '../../elements'
 
 const GreetingsGridContainer = styled.div`
     display: grid;
     height: 500px;
     align-items: center;
-    border-top: 1px solid black;
 `
-const GreetingsGridItem = styled.div`
+const ScrollLineGridItem = styled(ScrollLine)`
     justify-self: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+`
+const ProfileGridItem = styled(Profile)`
+    justify-self: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+
 `
 
 export const Greetings = ({children, name}) => {
     return (
         <ScrollElement name="greetings">
             <GreetingsGridContainer>
-                <GreetingsGridItem>
-                    Greetings
-                </GreetingsGridItem>
+                <ScrollLineGridItem/>
+                <ProfileGridItem/>
             </GreetingsGridContainer>
         </ScrollElement>
     )
