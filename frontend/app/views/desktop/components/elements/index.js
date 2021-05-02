@@ -8,6 +8,7 @@ import PageLink from './PageLink'
 import Logo from './Logo'
 import Chat from './Chat'
 import ProfileCard from './ProfileCard'
+import { HeaderOne, HeaderTwo, HeaderThree } from './Headers'
 
 export { 
     Loading,
@@ -20,5 +21,8 @@ export {
     Logo, 
     ScrollLine, 
     Chat, 
-    ProfileCard 
+    ProfileCard,
+    HeaderOne,
+    HeaderTwo,
+    HeaderThree 
 }

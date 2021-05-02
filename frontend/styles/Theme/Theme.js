@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 const theme = {
     navLinkTextSize: '12px',
     navFont: 'Bebas Neue',
+    headerFont: 'Baskerville',  
     textSize: '12px',
     h1TextSize: '20px',
     h2TextSize: '18px',
