@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
-import PageLink from "../../elements/PageLink";
+import React, { useContext, useState, useEffect } from "react";
 import Logo from "../../elements/Logo";
 import ThemeToggle from '../../elements/ThemeToggle'
 import styled from 'styled-components'
 import { ScrollLink, scroller } from '../../elements/ScrollLink'
+import Transition from '../../elements/Transition'
+import { GlobalContext } from '../../../../../contexts/GlobalContext'
+import useScrollPos from '../../../../../hooks/useScrollPos'
 
 const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
   background-color: ${props => props.theme.backgroundColor};
   height: 75px;
+  top: 0;
+  position: sticky;
 `;
 
 const NavGrid = styled.div`
@@ -54,37 +58,65 @@ const ThemeToggleGridItem = styled.div`
 `
 
 
-const Desktop_Navbar = (props) => {
+
+
+
+const Desktop_Navbar = ({theme}) => {
+  const { mounted } = useContext(GlobalContext)
+  const [headerStyle, setHeaderStyle] = useState({
+    transition: 'all 200ms ease-in'
+  })
+  useScrollPos(
+    ({ prevPos, currPos }) => {
+      const isVisible = currPos.y > prevPos.y
+  
+      const shouldBeStyle = {
+        visibility: isVisible ? 'visible' : 'hidden',
+        transition: `all 200ms ${isVisible ? 'ease-in' : 'ease-out'}`,
+        transform: isVisible ? 'none' : 'translate(0, -100%)'
+      }
+  
+      if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) return
+  
+      setHeaderStyle(shouldBeStyle)
+    },
+    [headerStyle]
+  )
+  
+
+
   return (
-    <Navbar_container>
-      <NavGrid>
-        <LogoGridItem>
-          <Logo/>
-        </LogoGridItem>
-        <AboutLinkGridItem>
-          <ScrollLink name="about">
-            About Me
-          </ScrollLink> 
-        </AboutLinkGridItem>
-        <ExperienceLinkGridItem>
-            <ScrollLink name="experience">
-              Experience
-            </ScrollLink>
-        </ExperienceLinkGridItem>
-        <WorkLinkGridItem>
-            <ScrollLink name="work">
-              Work
-            </ScrollLink>
-        </WorkLinkGridItem>
-        <ContactLinkGridItem>
-            <ScrollLink name="contact">
-              Contact
-            </ScrollLink>
-        </ContactLinkGridItem>
-        <ThemeToggleGridItem>
-          <ThemeToggle/>
-        </ThemeToggleGridItem>
-      </NavGrid>
+    <Navbar_container style={{ ...headerStyle}}>
+      <Transition toggle={scroll.visible}>
+        <NavGrid>
+          <LogoGridItem>
+            <Logo/>
+          </LogoGridItem>
+          <AboutLinkGridItem>
+            <ScrollLink name="about">
+              About Me
+            </ScrollLink> 
+          </AboutLinkGridItem>
+          <ExperienceLinkGridItem>
+              <ScrollLink name="experience">
+                Experience
+              </ScrollLink>
+          </ExperienceLinkGridItem>
+          <WorkLinkGridItem>
+              <ScrollLink name="work">
+                Work
+              </ScrollLink>
+          </WorkLinkGridItem>
+          <ContactLinkGridItem>
+              <ScrollLink name="contact">
+                Contact
+              </ScrollLink>
+          </ContactLinkGridItem>
+          <ThemeToggleGridItem>
+            <ThemeToggle/>
+          </ThemeToggleGridItem>
+        </NavGrid>
+      </Transition>
     </Navbar_container>
   );
 };

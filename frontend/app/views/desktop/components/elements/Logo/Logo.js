@@ -6,7 +6,7 @@ import { GlobalContext } from '../../../../../contexts/GlobalContext'
 const LogoWhite = () => {
   return <Image src="/logo/logo-white.png" alt='LR logo' width="75" height="75"/>;
 };
-const LogoBlack = () => {
+export const LogoBlack = () => {
   return <Image src="/logo/logo-black.png" alt='LR Logo' width="75" height="75"/>;
 }
 export default function Logo(){

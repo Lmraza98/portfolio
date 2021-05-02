@@ -1,11 +1,14 @@
+import { useContext } from 'react'
 import { Desktop_Navbar } from './Navbar.js'
-import Transition from '../../elements/Transition'
 
-const Navbar = ({children}) => {
+import { GlobalContext } from '../../../../../contexts/GlobalContext'
+
+function Navbar({children}){
+    const { mounted } = useContext(GlobalContext)
+
     return (
-        <Transition>
-            <Desktop_Navbar/>
-        </Transition>
+        
+        <Desktop_Navbar/>
     )
 }
 

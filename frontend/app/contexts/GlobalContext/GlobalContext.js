@@ -8,9 +8,6 @@ export function GlobalProvider({children, isMounted}){
         mounted: isMounted,
         theme: 'light'
     })
-
-    
-
     return (
         <GlobalContext.Provider value={global}>
             <GlobalDispatchContext.Provider value={setGlobal}>

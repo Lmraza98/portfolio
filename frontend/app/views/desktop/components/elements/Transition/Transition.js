@@ -1,28 +1,13 @@
-import { useTransition, animated } from 'react-spring'
-
-export const Transition = ({item}) => {
-    const transitions = useTransition(item, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        delay: 200,
-        config: config.molasses,
-      })
-
+import { Spring, animated, useSpring } from 'react-spring'
+import { useEffect } from 'react'
+export function Transition({children, toggle}){
+    const styles = useSpring({   
+        from: { opacity: 0 }, 
+        to: { opacity: 1 },
+        config: { duration: 1000 }
+        
+    })
     return (
-        <div style={{ display: 'flex' }}>
-        {
-            transitions(({ opacity }, item) => (
-            <animated.div
-            style={{
-                opacity: opacity.to(item.op),
-                transform: opacity
-                .to(item.trans)
-                .to(y => `translate3d(0,${y}px,0)`),
-            }}>
-            {item}
-            </animated.div>
-            ))
-        }
-        </div>
+            <animated.div style={styles}>{children}</animated.div>
     )
 }

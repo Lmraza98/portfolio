@@ -10,6 +10,7 @@ const HomeSectionFlexContainer = styled.div`
 const GreetingsGridItem = styled(Greetings)`
     display: flex;
     flex-direction: column;
+    
 `
 const AboutGridItem = styled(About)`
     display: flex;
