@@ -1,3 +1,9 @@
-import { Chat } from './Chat'
+import React from 'react'
 
-export default Chat
+export function Chat(){
+    return (
+        <div>
+            
+        </div>
+    )
+}

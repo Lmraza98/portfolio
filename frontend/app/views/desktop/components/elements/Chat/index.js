@@ -1,9 +1,3 @@
-import React from 'react'
+import { Chat } from './Chat'
 
-export const index = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+export default Chat

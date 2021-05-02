@@ -2,7 +2,8 @@ import { Navbar, Greetings, About, Experience, Work, Contact, Footer } from '../
 import styled from 'styled-components'
 const HomeLayoutContainer = styled.div`
     width: 100%;
-    background-color: ${(props) => {props.theme.backgroundColor}}
+    transition: background-color 0.5s ease;
+    background-color: ${props => props.theme.backgroundColor};
 `
 const HomeSectionFlexContainer = styled.div`
     display: flex;
@@ -33,8 +34,9 @@ function HomeLayout({children}){
     return (
         <HomeLayoutContainer>
             
-            <Navbar/>
+            
             <HomeSectionFlexContainer>
+                <Navbar/>
                 <GreetingsGridItem/>
                 <AboutGridItem/>
                 <ExperienceGridItem/>
