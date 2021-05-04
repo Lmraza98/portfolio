@@ -1,9 +1,57 @@
-import React from 'react'
+import styled from 'styled-components'
+const ProfileCardContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+const ProfileSpriteContainer = styled.div`
+
+
+`
+const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+`
+const Name = styled.div`
+    font-size:35px;
+    text-align: center;
+    font-family: ${props => props.theme.navFont};
+    color: ${props => props.theme.textColor};
+`
+const Title = styled.div`
+    font-size: 20px;
+    text-align: center;
+    font-family: ${props => props.theme.navFont};
+    color: ${props => props.theme.textColor};
+`
+
+const Place = styled.div`
+    font-size: 18px;
+    text-align: center;
+    font-family: ${props => props.theme.navFont};
+    color: ${props => props.theme.textColor};
+`
+
 
 export function ProfileCard(){
     return (
-        <div>
-            
-        </div>
+        <ProfileCardContainer>
+            <ProfileSpriteContainer>
+
+            </ProfileSpriteContainer>
+            <InfoContainer>
+                <Name>
+                    Lucas
+                </Name>
+                <Title>
+                    Software Engineer
+                </Title>
+                <Place>
+                    Boston, MA
+                </Place>
+            </InfoContainer>   
+        </ProfileCardContainer>
     )
 }

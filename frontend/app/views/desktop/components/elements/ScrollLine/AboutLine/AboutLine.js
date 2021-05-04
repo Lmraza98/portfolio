@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ScrollLine = () => {
+export const AboutLine = () => {
     return (
         <div>
             

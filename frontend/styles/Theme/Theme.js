@@ -9,6 +9,7 @@ const theme = {
     h1TextSize: '20px',
     h2TextSize: '18px',
     h3TextSize: '16px'
+    
 }
 const lightColors = {
     backgroundColor: '#FFFDFD',
@@ -16,15 +17,19 @@ const lightColors = {
     navLinkColor: '#000000',
     pageLinkColor: '#0B3C49',
     textColor: '#000000',
-    headerColor: '#000000'
+    headerColor: '#000000',
+    chatBackgroundColor: '#C4C4C4',
+    chatForegroundColor: '#E6E6E6'
 }
 const darkColors = {
     backgroundColor: '#013948',
     navBackgroundColor: '#0B3C49',
     navLinkColor: '#FFFFFF',
     pageLinkColor: '#B2B2B2',
-    textColor: 'blue',
-    headerColor: '#ffffff'
+    textColor: '#FFFFFF',
+    headerColor: '#ffffff',
+    chatBackgroundColor: '#444343',
+    chatForegroundColor: '#595959'
 }
 const lightMode = {
     mode: "light",

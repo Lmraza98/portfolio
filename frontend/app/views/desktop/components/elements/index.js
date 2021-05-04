@@ -3,7 +3,7 @@ import Toggle from './Toggle'
 import ThemeToggle from './ThemeToggle'
 import ScrollLink from './ScrollLink'
 import { scroller, ScrollElement } from './ScrollElement'
-import ScrollLine from './ScrollLine'
+import { GreetingsLine, AboutLine, ExperienceLine, WorkLine } from './ScrollLine'
 import PageLink from './PageLink'
 import Logo from './Logo'
 import Chat from './Chat'
@@ -19,10 +19,13 @@ export {
     ScrollElement, 
     PageLink, 
     Logo, 
-    ScrollLine, 
     Chat, 
     ProfileCard,
     HeaderOne,
     HeaderTwo,
-    HeaderThree 
+    HeaderThree,
+    GreetingsLine, 
+    AboutLine, 
+    ExperienceLine, 
+    WorkLine 
 }
