@@ -1,11 +1,19 @@
 import styled from 'styled-components'
+
 const ProfileCardContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 `
 const ProfileSpriteContainer = styled.div`
-
-
+    width: 150px;
+    height: 150px;
+    border-radius 50%;
+    background-color: white;
+    position: absolute;
 `
 const InfoContainer = styled.div`
     display: flex;
@@ -26,15 +34,12 @@ const Title = styled.div`
     font-family: ${props => props.theme.navFont};
     color: ${props => props.theme.textColor};
 `
-
 const Place = styled.div`
     font-size: 18px;
     text-align: center;
     font-family: ${props => props.theme.navFont};
     color: ${props => props.theme.textColor};
 `
-
-
 export function ProfileCard(){
     return (
         <ProfileCardContainer>
@@ -53,5 +58,6 @@ export function ProfileCard(){
                 </Place>
             </InfoContainer>   
         </ProfileCardContainer>
+        
     )
 }

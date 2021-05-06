@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 
 const MessagesContainer = styled.div`
-    justify-content: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    width: 100%;
 
 `
 
-export const Messages = ({message}) => {
+export const Messages = ({children}) => {
     return (
         <MessagesContainer>{
-            message
+            children
         }</MessagesContainer>
     )
 }

@@ -8,8 +8,9 @@ const theme = {
     textSize: '12px',
     h1TextSize: '20px',
     h2TextSize: '18px',
-    h3TextSize: '16px'
-    
+    h3TextSize: '16px',
+    userMessageColor: '#00CAFF',
+    botMessageColor: '#C4C4C4'
 }
 const lightColors = {
     backgroundColor: '#FFFDFD',
@@ -29,7 +30,8 @@ const darkColors = {
     textColor: '#FFFFFF',
     headerColor: '#ffffff',
     chatBackgroundColor: '#444343',
-    chatForegroundColor: '#595959'
+    chatForegroundColor: '#595959',
+    
 }
 const lightMode = {
     mode: "light",

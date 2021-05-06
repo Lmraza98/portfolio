@@ -6,22 +6,17 @@ const GreetingsGridContainer = styled.div`
     display: grid;
     height: 100vh;
     align-items: center;
-    grid-template-columns: 15% 10% 25% 50%;
+    grid-template-columns: 15% 10% 75%;
 `
 const GreetingsLineGridItem = styled.div`
     justify-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
 `
-const ProfileCardGridItem = styled.div`
+const ChatGridItem = styled.div`
     justify-self: center;
     grid-column-start: 3;
     grid-column-end: 4;
-`
-const ChatGridItem = styled.div`
-    justify-self: center;
-    grid-column-start: 4;
-    grid-column-end: 5;
     width: 100%;
 `
 
@@ -32,7 +27,7 @@ export const Greetings = ({children, name}) => {
             <GreetingsGridContainer>
             
                 <GreetingsLineGridItem><GreetingsLine/></GreetingsLineGridItem>
-                <ProfileCardGridItem><ProfileCard/></ProfileCardGridItem>
+                
                 <ChatGridItem><Chat/></ChatGridItem>
             </GreetingsGridContainer>
         </ScrollElement>

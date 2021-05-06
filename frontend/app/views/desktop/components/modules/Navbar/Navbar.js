@@ -10,7 +10,7 @@ import useScrollPos from '../../../../../hooks/useScrollPos'
 const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
-  // background-color: ${props => props.theme.backgroundColor};
+  background-color: ${props => props.theme.backgroundColor};
   height: 75px;
   top: 0;
   position: sticky;
