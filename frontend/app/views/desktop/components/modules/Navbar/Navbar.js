@@ -14,6 +14,7 @@ const Navbar_container = styled.div`
   height: 75px;
   top: 0;
   position: sticky;
+  z-index: 1;
 `;
 
 const NavGrid = styled.div`

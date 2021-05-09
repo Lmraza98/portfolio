@@ -14,6 +14,7 @@ const ProfileSpriteContainer = styled.div`
     border-radius 50%;
     background-color: white;
     position: absolute;
+    
 `
 const InfoContainer = styled.div`
     display: flex;

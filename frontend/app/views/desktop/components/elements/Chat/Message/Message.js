@@ -1,16 +1,17 @@
 import styled from 'styled-components'
+import { useState } from 'react'
 
 const MessageContainer = styled.div`
-    background-color: ${props => props.isBot ? props.theme.botMessageColor : props.theme.userMessageColor};
+    
     color: white;
     width: fit-content;
-    min-width: 5%;
-    max-width: 40%;
+    min-width: 15%;
+    max-width: 75%;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 10px;
+    
 
     display: flex;
     flex-direction: column;
@@ -19,16 +20,34 @@ const MessageContainer = styled.div`
 `
 const StyledMessage = styled.div`
     // border-radius: ${props => props.startSequence ? grey : blue};
+    border-radius: 10px;
+    text-align: center;
+    background-color: ${props => props.isBot ? props.theme.botMessageColor : props.theme.userMessageColor};
 `
-const onHover = ({event}) => {
-    
-}
+const HoverMesssageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height:100%;
+`
+const Info = styled.div`
 
-import React from 'react'
+    font-size: 10px;
 
+
+
+`
 export const Message = ({ data, isBot, startSequence, endSequence, timeStamp }) => {
+    const [showInfo, setShowInfo] = useState(false)
     return (
-        <MessageContainer isBot={isBot}>
+        showInfo ? 
+        <HoverMesssageContainer >
+            <MessageContainer isBot={isBot}>
+                <StyledMessage onMouseEnter={() => setShowInfo(true)} onMouseLeave={() => setShowInfo(false)}>{data}</StyledMessage>
+                <Info>something</Info>
+            </MessageContainer>
+            
+        </HoverMesssageContainer>  :
+        <MessageContainer onMouseEnter={() => setShowInfo(true)} onMouseLeave={() => setShowInfo(false)} isBot={isBot}>
             <StyledMessage>{data}</StyledMessage>
         </MessageContainer>
     )
