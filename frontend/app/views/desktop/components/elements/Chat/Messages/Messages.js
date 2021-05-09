@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React, { useState, useEffect } from 'react'
 
 const MessagesContainer = styled.div`
     justify-content: left;
@@ -14,13 +15,19 @@ const MessagesContainer = styled.div`
     ::-webkit-scrollbar-track {
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
-
 `
 
-export const Messages = ({children}) => {
+export const Messages = ({children, messageList}) => {
+
+    const [ messages, setMessages ] = useState({messages: []})
+    
+    useEffect(() => {
+        setMessages({messages})
+    }, messages)
+
     return (
         <MessagesContainer>{
-            children
+            React.Children.map(children, (child) => child)
         }</MessagesContainer>
     )
 }

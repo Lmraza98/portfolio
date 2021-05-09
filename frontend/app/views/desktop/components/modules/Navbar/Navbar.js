@@ -58,10 +58,6 @@ const ThemeToggleGridItem = styled.div`
   justify-self: center;
 `
 
-
-
-
-
 const Desktop_Navbar = ({theme}) => {
   const { mounted } = useContext(GlobalContext)
   const [headerStyle, setHeaderStyle] = useState({
@@ -84,8 +80,6 @@ const Desktop_Navbar = ({theme}) => {
     [headerStyle]
   )
   
-
-
   return (
     <Navbar_container style={{ ...headerStyle}}>
       <Transition toggle={scroll.visible}>

@@ -4,7 +4,7 @@ import { ProfileCard, Chat,  GreetingsLine, ScrollElement } from '../../elements
 
 const GreetingsGridContainer = styled.div`
     display: grid;
-    height: 100vh;
+    height: 92vh;
     align-items: center;
     grid-template-columns: 15% 10% 75%;
 `
@@ -14,10 +14,11 @@ const GreetingsLineGridItem = styled.div`
     grid-column-end: 3;
 `
 const ChatGridItem = styled.div`
-    justify-self: center;
+    // justify-self: center;
     grid-column-start: 3;
     grid-column-end: 4;
     width: 100%;
+    height: 100%;
 `
 
 

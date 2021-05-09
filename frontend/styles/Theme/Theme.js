@@ -10,8 +10,7 @@ const theme = {
     h2TextSize: '18px',
     h3TextSize: '16px',
     messageInputTextSize: '35px',
-    messageTextSize: '35px',
-    botMessageColor: '#393e46'
+    messageTextSize: '35px'
 }
 const lightColors = {
     backgroundColor: '#FFFDFD',
@@ -23,6 +22,8 @@ const lightColors = {
     chatBackgroundColor: '#C4C4C4',
     chatForegroundColor: '#FFFDFD',
     userMessageColor: '#1cc5dc',
+    // botMessageColor: '#000000',
+    botMessageColor: '#393e46'
 }
 const darkColors = {
     backgroundColor: '#013948',
@@ -34,6 +35,7 @@ const darkColors = {
     chatBackgroundColor: '#444343',
     chatForegroundColor: '#013948',
     userMessageColor: '#c02739',
+    botMessageColor: '#393e46'
 }
 const lightMode = {
     mode: "light",
