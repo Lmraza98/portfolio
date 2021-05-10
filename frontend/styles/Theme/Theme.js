@@ -21,9 +21,10 @@ const lightColors = {
     headerColor: '#000000',
     chatBackgroundColor: '#C4C4C4',
     chatForegroundColor: '#FFFDFD',
-    userMessageColor: '#1cc5dc',
+    userMessageColor: '#c02739',
     // botMessageColor: '#000000',
-    botMessageColor: '#393e46'
+    botMessageColor: '#393e46',
+    oppositeText: '#FFFFFF'
 }
 const darkColors = {
     backgroundColor: '#013948',
@@ -34,8 +35,9 @@ const darkColors = {
     headerColor: '#ffffff',
     chatBackgroundColor: '#444343',
     chatForegroundColor: '#013948',
-    userMessageColor: '#c02739',
-    botMessageColor: '#393e46'
+    userMessageColor: '#1cc5dc',
+    botMessageColor: '#393e46',
+    oppositeText: '#000000'
 }
 const lightMode = {
     mode: "light",

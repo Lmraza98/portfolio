@@ -18,27 +18,18 @@ const ChatGridContainer = styled.div`
     
 `
 const CardGridItem = styled.div`
-    // height: 100%;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    border-left: 1px solid ${props => props.theme.textColor};
-    
+    grid-row-start: 1;
+    grid-row-end: 4;
 `
 const CardContainer = styled.div`
-    // position: absolute;
     position: flex;
     flex-direction: row;
     justify-content: column;
     align-items: center;
-    // margin: 2%;
     height: 100%;
-    // width: 100% - 2%;
-    background-color:${props => props.theme.chatBackgroundColor};
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
-    // padding: 10%;
+    background-color: rgba(255, 255, 255, .15);  
 `
 const MessageListGridItem = styled.div`
     grid-column-start: 2;
@@ -70,7 +61,7 @@ const ChatInputGridItem = styled.div`
 `
 const ChatInputContainer = styled.form`
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 80% 20%;
     
 `
 const ChatInput = styled.input`
@@ -113,17 +104,19 @@ const ChatTopGridItem = styled.div`
     grid-column-end: 4;
     grid-row-start: 1; 
     grid-row-end: 2;
-    background-color: ${props => props.theme.chatBackgroundColor};
-    border-left: 1px solid ${props => props.theme.textColor};
+    background-color: transparent;
+    // backdrop-filter: blur(5px);
+    // border-left: 1px solid ${props => props.theme.textColor};
 `
 const ChatRightGridItem = styled.div`
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1; 
-    grid-row-end: 3;
-    background-color: ${props => props.theme.chatBackgroundColor};
-    border-top-left-radius: 30%;
-    border-bottom-left-radius: 30%;
+    grid-row-end: 4;
+    background-color: rgba(255, 255, 255, .15);  
+//   backdrop-filter: blur(5px);
+    // border-top-left-radius: 30%;
+    // border-bottom-left-radius: 30%;
 
 
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ProfileCardContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
@@ -13,7 +13,7 @@ const ProfileSpriteContainer = styled.div`
     height: 150px;
     border-radius 50%;
     background-color: white;
-    position: absolute;
+    // position: absolute;
     
 `
 const InfoContainer = styled.div`
@@ -21,7 +21,7 @@ const InfoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    // height: 100%;
 `
 const Name = styled.div`
     font-size:35px;

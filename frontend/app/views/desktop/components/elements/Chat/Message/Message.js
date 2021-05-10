@@ -8,7 +8,6 @@ const MessageContainer = styled.div`
     max-width: 75%;
     // padding-left: 15px;
     // padding-right: 15px;
-
     display: flex;
     flex-direction: column;
     // margin: 10px;
@@ -30,7 +29,6 @@ const HoverMesssageContainer = styled.div`
 `
 const Info = styled.div`
     font-size: 10px;
-    
 `
 export const Message = ({ data, isBot, startSequence, endSequence, timeStamp }) => {
     console.log('isBot: ' + isBot);

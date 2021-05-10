@@ -1,4 +1,5 @@
 import { Navbar, Greetings, About, Experience, Work, Contact, Footer } from '../../modules'
+import { SideMenu } from '../../elements'
 import styled from 'styled-components'
 const HomeLayoutContainer = styled.div`
     width: 100%;
@@ -33,10 +34,11 @@ const ContactGridItem = styled(Contact)`
 function HomeLayout({children}){
     return (
         <HomeLayoutContainer>
-            
+            <SideMenu/>
             
             <HomeSectionFlexContainer>
                 <Navbar/>
+                
                 <GreetingsGridItem/>
                 <AboutGridItem/>
                 <ExperienceGridItem/>

@@ -5,7 +5,6 @@ const MessagesContainer = styled.div`
     justify-content: left;
     display: flex;
     flex-direction: column-reverse;
-    
     width: 100%;
     font-size: ${ props => props.theme.messageTextSize};
     overflow: auto;
