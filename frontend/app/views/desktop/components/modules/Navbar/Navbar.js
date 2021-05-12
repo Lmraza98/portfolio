@@ -11,6 +11,7 @@ const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
   background-color: rgba(255, 255, 255, .15);  
+  // background-color: ${props => props.theme.backgroundColor};
   backdrop-filter: blur(5px);
   height: 70px;
   top: 0;
@@ -85,9 +86,14 @@ const Desktop_Navbar = ({theme}) => {
     <Navbar_container style={{ ...headerStyle}}>
       <Transition toggle={scroll.visible}>
         <NavGrid>
-          <LogoGridItem>
-            <Logo/>
-          </LogoGridItem>
+          
+            <LogoGridItem>
+            <ScrollLink name="greetings">
+              <Logo/>
+              </ScrollLink>
+            </LogoGridItem>
+          
+          
           <AboutLinkGridItem>
             <ScrollLink name="about">
               About Me

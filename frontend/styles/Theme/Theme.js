@@ -9,7 +9,7 @@ const theme = {
     h1TextSize: '20px',
     h2TextSize: '18px',
     h3TextSize: '16px',
-    messageInputTextSize: '35px',
+    messageInputTextSize: '30px',
     messageTextSize: '35px'
 }
 const lightColors = {

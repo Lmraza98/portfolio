@@ -37,6 +37,7 @@ class MyDocument extends Document {
         `}</style>
       <Html>
         <Head/>
+        <script src="https://kit.fontawesome.com/a23e206ba2.js" crossorigin="anonymous"></script>
         <body>
           <Main />
           <NextScript />

@@ -6,7 +6,6 @@ import { scroller, ScrollElement } from './ScrollElement'
 import { GreetingsLine, AboutLine, ExperienceLine, WorkLine } from './ScrollLine'
 import PageLink from './PageLink'
 import Logo from './Logo'
-import Chat from './Chat'
 import ProfileCard from './ProfileCard'
 import SideMenu from './SideMenu'
 import { HeaderOne, HeaderTwo, HeaderThree } from './Headers'
@@ -21,7 +20,6 @@ export {
     ScrollElement, 
     PageLink, 
     Logo, 
-    Chat, 
     ProfileCard,
     HeaderOne,
     HeaderTwo,

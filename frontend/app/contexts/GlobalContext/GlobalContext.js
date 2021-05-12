@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 
-export const GlobalContext = React.createContext(undefined)
+export const GlobalContext = React.createContext()
 export const GlobalDispatchContext = React.createContext(undefined)
 
 export function GlobalProvider({children, isMounted}){
     const [global, setGlobal] = useState({
         mounted: isMounted,
-        theme: 'light'
+        theme: 'light',
+        menu: true
     })
     return (
         <GlobalContext.Provider value={global}>

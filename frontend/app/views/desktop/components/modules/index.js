@@ -5,5 +5,6 @@ import About from './About'
 import Experience from './Experience'
 import Work from './Work'
 import Greetings from './Greetings'
+import Chat from './Chat'
 
-export { Navbar, Greetings, About, Experience, Work, Contact, Footer }
+export { Navbar, Chat, Greetings, About, Experience, Work, Contact, Footer }

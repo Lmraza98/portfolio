@@ -3,8 +3,9 @@ import styled from 'styled-components'
 const ProfileCardContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    padding-top: 10%;
     height: 100%;
     width: 100%;
 `
@@ -41,9 +42,16 @@ const Place = styled.div`
     font-family: ${props => props.theme.navFont};
     color: ${props => props.theme.textColor};
 `
-export function ProfileCard(){
+const ButtonContainer = styled.div`
+    align-self: start;
+
+`
+export function ProfileCard({children}){
     return (
         <ProfileCardContainer>
+            <ButtonContainer>
+                {children}
+            </ButtonContainer>
             <ProfileSpriteContainer>
 
             </ProfileSpriteContainer>
