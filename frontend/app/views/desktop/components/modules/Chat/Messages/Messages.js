@@ -21,8 +21,8 @@ export const Messages = ({children, messageList}) => {
     const [ messages, setMessages ] = useState({messages: []})
     
     useEffect(() => {
-        setMessages({messages})
-    }, messages)
+        setMessages(messages)
+    }, [])
 
     return (
         <MessagesContainer>{

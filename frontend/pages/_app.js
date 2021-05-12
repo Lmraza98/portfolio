@@ -1,24 +1,26 @@
 import React, { useState, useContext, useEffect } from "react";
 import App from 'next/app'
-import { GlobalProvider, GlobalDispatchContext } from '../app/contexts/GlobalContext'
+import { Store, GlobalContext } from '../app/contexts/GlobalContext'
 import { Theme } from '../styles/Theme'
 import Loading from '../app/views/desktop/components/elements/Loading'
 
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
 
-  let [isMounted, setIsMounted] = useState(false)
+  
+  const [isMounted, setIsMounted] = useState(false)
   useEffect(() => {
     setIsMounted(true)
   })
+  // console.log("mounted" + state.mounted)
   
   return (
-    <>
-      <GlobalProvider isMounted={isMounted}>
-        <Theme>
-          {isMounted ? <Component {...pageProps}/> : <Loading/>}
-        </Theme>
-      </GlobalProvider>
-    </>
+    <Store>
+      <Theme>
+        {isMounted ? <Component {...pageProps}/> : <Loading/>}
+      </Theme>
+    </Store>
+    
   )
 }
+export default MyApp

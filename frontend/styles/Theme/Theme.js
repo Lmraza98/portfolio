@@ -51,7 +51,9 @@ const darkMode = {
 }
 export const Theme = ({children}) => 
 {
-  const { theme } = useContext(GlobalContext)
+  const [ state, dispatch ] = useContext(GlobalContext);
+  const theme = state.theme
+  // const { theme } = useContext(GlobalContext)
   // const { theme } = useContext(ThemeContext)
 
   return (

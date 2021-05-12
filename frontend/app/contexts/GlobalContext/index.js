@@ -1,3 +1,3 @@
-import { GlobalContext, GlobalDispatchContext, GlobalProvider } from './GlobalContext'
+import Store, { Context as GlobalContext } from './GlobalContext'
 
-export { GlobalContext, GlobalDispatchContext, GlobalProvider }
+export { GlobalContext, Store }

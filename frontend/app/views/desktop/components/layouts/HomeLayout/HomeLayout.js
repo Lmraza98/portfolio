@@ -37,7 +37,8 @@ const ContactGridItem = styled(Contact)`
 `
 
 function HomeLayout({children}){
-    const { menu } = useContext(GlobalContext)
+    const [ state, dispatch ] = useContext(GlobalContext)
+    const menu = state.menu
     console.log('Menu: ' + menu)
     return (
         <>

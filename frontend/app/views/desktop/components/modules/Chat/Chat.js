@@ -3,7 +3,7 @@ import Messages from './Messages'
 import Message from './Message'
 import styled from 'styled-components'
 import ProfileCard from '../../elements/ProfileCard'
-import { GlobalContext, GlobalDispatchContext } from '../../../../../contexts/GlobalContext'
+import { GlobalContext, Store } from '../../../../../contexts/GlobalContext'
 const ChatGridContainer = styled.div`
     width:100%;
     height:100%;
@@ -194,17 +194,18 @@ const MenuButton = ({show}) => {
 export function Chat(){
     const [ messages, setMessages ] = useState([])
     const [inputValue, setInputValue] = useState("")
-    const [ showMenu, setShowMenu ] = useState(true)
-    const global = useContext(GlobalContext)
-    const setGlobal = useContext(GlobalDispatchContext)
-    const handleClick = (event) => {
-        setGlobal( {menu: !showMenu, ...global } )
-        setShowMenu(!showMenu)
-    }
     const onSend = (event) => {
         event.preventDefault();
         setMessages([inputValue, ...messages])
         setInputValue(""); 
+    }
+
+    const [ showMenu, setShowMenu ] = useState(true)
+    const [ state, dispatch ] = useContext(GlobalContext)
+    console.log("state: " + JSON.stringify(state))
+    const handleClick = (event) => {
+        dispatch( {type: 'SET_MENU'})
+        setShowMenu(!showMenu)
     }
     
     return (

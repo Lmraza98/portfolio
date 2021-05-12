@@ -1,21 +1,17 @@
 import { useContext, useState } from 'react'
 import Toggle from '../Toggle'
-import { GlobalContext, GlobalDispatchContext } from '../../../../../contexts/GlobalContext'
+import { GlobalContext, Store } from '../../../../../contexts/GlobalContext'
 
 
 export default function ThemeToggle(){
-    
-    let { theme } = useContext(GlobalContext)
-    const setGlobal = useContext(GlobalDispatchContext)
-    let global = useContext(GlobalContext)
-    console.log("Global Context: " + JSON.stringify(global))
-    console.log("Theme from ThemeToggle.js: " + theme)
+    let [ state, dispatch] = useContext(GlobalContext)
+    const theme = state.theme
     
     const checkedBool = (theme === "light" ? false : true)
     let [ checked, setChecked ] = useState(checkedBool)
 
     const toggle = (checked) => {
-        setGlobal( theme === 'light' || undefined ? {theme: "dark", ...global} : {theme: "light", ...global})
+        dispatch({type: 'SET_THEME', payload: checked})
         setChecked()
     }
 
