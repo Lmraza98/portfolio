@@ -2,11 +2,17 @@ import styled from 'styled-components'
 
 const CheckBoxWrapper = styled.div`
   position: relative;
+  justify-content: center;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `;
 const CheckBoxLabel = styled.label`
   position: absolute;
-  top: 0;
-  left: 0;
+  // top: 0;
+  // left: 0;
   width: 42px;
   height: 26px;
   border-radius: 15px;

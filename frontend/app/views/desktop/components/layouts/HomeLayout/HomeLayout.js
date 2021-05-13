@@ -5,13 +5,20 @@ import { useContext } from 'react'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 
 const HomeLayoutContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: row;
     background-color: ${props => props.theme.backgroundColor};
     transition: background-color 0.5s ease;
+    // transition: ease;
+`
+const MainContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    transition: ease;
+    width: 100%;
+    height: 100%;
 `
 const GreetingsGridItem = styled(Greetings)`
     // display: flex;
@@ -39,34 +46,16 @@ const ContactGridItem = styled(Contact)`
 function HomeLayout({children}){
     const [ state, dispatch ] = useContext(GlobalContext)
     const menu = state.menu
-    console.log('Menu: ' + menu)
     return (
         <>
         <HomeLayoutContainer>
-            <Navbar/>
-            {
-                menu ? 
-                <>
-                    <SideMenu/>
-                    <Chat>
-                        <AboutGridItem/>
-                        <ExperienceGridItem/>
-                        <WorkGridItem/>
-                        <ContactGridItem/>
-                    </Chat>
-                </>  :
-                <>
-                <Chat>
-                    <AboutGridItem/>
-                    <ExperienceGridItem/>
-                    <WorkGridItem/>
-                    <ContactGridItem/>
-                </Chat>
-            </>
-
-            }
-            
-            
+            <SideMenu show={menu}/>
+            <Chat>
+                <AboutGridItem/>
+                <ExperienceGridItem/>
+                <WorkGridItem/>
+                <ContactGridItem/>
+            </Chat>
         </HomeLayoutContainer>
         <Footer/>
         </>

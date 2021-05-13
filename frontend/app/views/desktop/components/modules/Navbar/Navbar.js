@@ -10,12 +10,12 @@ import useScrollPos from '../../../../../hooks/useScrollPos'
 const Navbar_container = styled.div`
   width: 100%;
   align-content: center;
-  background-color: rgba(255, 255, 255, .15);  
+  // background-color: rgba(255, 255, 255, .15);  
   // background-color: ${props => props.theme.backgroundColor};
-  backdrop-filter: blur(5px);
-  height: 70px;
-  top: 0;
-  position: sticky;
+  // backdrop-filter: blur(5px);
+  height: 100%;
+  // top: 0;
+  // position: sticky;
   z-index: 1;
 `;
 
@@ -24,7 +24,7 @@ const NavGrid = styled.div`
   width: 100%;
   display: inline-grid;
   align-items: center;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: 20% repeat(6, 1fr) 15%;
 `;
 
 const LogoGridItem = styled.div`
@@ -65,22 +65,22 @@ const Desktop_Navbar = ({theme}) => {
   const [headerStyle, setHeaderStyle] = useState({
     transition: 'all 200ms ease-in'
   })
-  useScrollPos(
-    ({ prevPos, currPos }) => {
-      const isVisible = currPos.y > prevPos.y
+  // useScrollPos(
+  //   ({ prevPos, currPos }) => {
+  //     const isVisible = currPos.y > prevPos.y
   
-      const shouldBeStyle = {
-        visibility: isVisible ? 'visible' : 'hidden',
-        transition: `all 200ms ${isVisible ? 'ease-in' : 'ease-out'}`,
-        transform: isVisible ? 'none' : 'translate(0, -100%)'
-      }
+  //     const shouldBeStyle = {
+  //       visibility: isVisible ? 'visible' : 'hidden',
+  //       transition: `all 200ms ${isVisible ? 'ease-in' : 'ease-out'}`,
+  //       transform: isVisible ? 'none' : 'translate(0, -100%)'
+  //     }
   
-      if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) return
+  //     if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) return
   
-      setHeaderStyle(shouldBeStyle)
-    },
-    [headerStyle]
-  )
+  //     setHeaderStyle(shouldBeStyle)
+  //   },
+  //   [headerStyle]
+  // )
   
   return (
     <Navbar_container style={{ ...headerStyle}}>

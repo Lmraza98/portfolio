@@ -4,6 +4,9 @@ import Message from './Message'
 import styled from 'styled-components'
 import ProfileCard from '../../elements/ProfileCard'
 import { GlobalContext, Store } from '../../../../../contexts/GlobalContext'
+import Navbar from '../Navbar'
+import ThemeToggle from '../../elements/ThemeToggle'
+
 const ChatGridContainer = styled.div`
     width:100%;
     height:100%;
@@ -30,7 +33,6 @@ const MessageListGridItem = styled.div`
     grid-column-end: 3;
     grid-row-start: 2; 
     grid-row-end: 3;
-
     background-color: transparent;
     // border-bottom: 3px solid ${props => props.theme.textColor};
     // border-left: 3px solid ${props => props.theme.textColor};
@@ -115,18 +117,18 @@ const ChatUserMenuGridItem = styled.div`
 `
 const ChatUserMenuContainer = styled.div`
     display: grid;
-    grid-template-rows: 10% 40% 10% 40%;
+    grid-template-rows: 20% 5% 35% 5% 35%;
     height: 100%;
 `
 const Online = styled.div`
     padding 10%;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 `
 const Offline = styled.div`
     padding 10%;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
 `
 const PlusButton = styled.div`
     border-radius: 50%;
@@ -134,7 +136,7 @@ const PlusButton = styled.div`
     height: 25px;
     background-color: ${props => props.theme.textColor};
     position: relative;
-    margin-left: 3px;
+    // margin-left: 3px;
     :after {
         content: " ";
         position: absolute;
@@ -166,7 +168,7 @@ const MinusButton = styled.div`
     height: 25px;
     background-color: ${props => props.theme.textColor};
     position: relative;
-    margin-left: 3px;
+    // margin-left: 3px;
     :after {
         content: " ";
         position: absolute;
@@ -181,13 +183,22 @@ const MinusButton = styled.div`
     }
 `
 const MenuButtonContainer = styled.div`
-    
 
+
+
+`
+const ThemeToggleContainer= styled(ThemeToggle)`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `
 const MenuButton = ({show}) => {
     return (
         show ? <MinusButton/> : <PlusButton/>
     )
+
 }
 
 
@@ -209,11 +220,14 @@ export function Chat(){
     }
     
     return (
-        <>
         <ChatGridContainer>
-            <ChatTopGridItem/>
+            <ChatTopGridItem>
+                <Navbar/>
+            </ChatTopGridItem>
             <ChatUserMenuGridItem>
                 <ChatUserMenuContainer>
+                {/* <ThemeToggleContainer><ThemeToggle/></ThemeToggleContainer> */}
+                    
                     <Online>Online</Online>
                     <Offline>Offline</Offline>
                 </ChatUserMenuContainer>
@@ -245,6 +259,5 @@ export function Chat(){
                 </ChatInputContainer>
             </ChatInputGridItem>
         </ChatGridContainer>
-        </>
     )
 }

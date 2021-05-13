@@ -12,7 +12,10 @@ const MenuContainer= styled.div`
     // align-items: center;
     // padding-left: 10px;
     // padding-top: 10px;
-    transition: ease 1s;
+    display: ${props => props.show ? "flex" : "none"};
+    // visibility: ${props => props.show ? "hidden" : "none"};
+    transition: all 1s;
+    width: 20%;
 `
 const IconContainer = styled.div`
     display: flex;
@@ -34,12 +37,11 @@ const PageLinkContainer = styled.div`
 
 const Icon = styled.i`
     font-size: 50px;
+    color: ${props => props.theme.textColor};
 `
-const SideMenu = () => {
-    
-    
+const SideMenu = ({show}) => {
     return (
-                <MenuContainer left="-100px">
+                <MenuContainer show={show} left="-100px">
                     <IconContainer>
                         <Icon className="fab fa-youtube-square"></Icon>
                         <Icon className="fab fa-linkedin"></Icon>
