@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Desktop_Navbar } from './Navbar.js'
+import { Desktop_Navbar } from './Navigation.js'
 
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 

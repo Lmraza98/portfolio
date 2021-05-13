@@ -1,5 +1,4 @@
-import { Navbar, Chat, Greetings, About, Experience, Work, Contact, Footer } from '../../modules'
-import { SideMenu } from '../../elements'
+import { Navbar, SideMenu, Main, Greetings, About, Experience, Work, Contact, Footer } from '../../modules'
 import styled from 'styled-components'
 import { useContext } from 'react'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
@@ -50,12 +49,9 @@ function HomeLayout({children}){
         <>
         <HomeLayoutContainer>
             <SideMenu show={menu}/>
-            <Chat>
-                <AboutGridItem/>
-                <ExperienceGridItem/>
-                <WorkGridItem/>
-                <ContactGridItem/>
-            </Chat>
+            <Main>
+                {/*  */}
+            </Main>
         </HomeLayoutContainer>
         <Footer/>
         </>

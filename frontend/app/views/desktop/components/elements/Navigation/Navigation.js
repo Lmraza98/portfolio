@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
-import Logo from "../../elements/Logo";
-import ThemeToggle from '../../elements/ThemeToggle'
+import Logo from "../Logo";
+import ThemeToggle from '../ThemeToggle'
 import styled from 'styled-components'
-import { ScrollLink, scroller } from '../../elements/ScrollLink'
-import Transition from '../../elements/Transition'
+import { ScrollLink, scroller } from '../ScrollLink'
+import Transition from '../Transition'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 import useScrollPos from '../../../../../hooks/useScrollPos'
 
@@ -65,35 +65,16 @@ const Desktop_Navbar = ({theme}) => {
   const [headerStyle, setHeaderStyle] = useState({
     transition: 'all 200ms ease-in'
   })
-  // useScrollPos(
-  //   ({ prevPos, currPos }) => {
-  //     const isVisible = currPos.y > prevPos.y
-  
-  //     const shouldBeStyle = {
-  //       visibility: isVisible ? 'visible' : 'hidden',
-  //       transition: `all 200ms ${isVisible ? 'ease-in' : 'ease-out'}`,
-  //       transform: isVisible ? 'none' : 'translate(0, -100%)'
-  //     }
-  
-  //     if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) return
-  
-  //     setHeaderStyle(shouldBeStyle)
-  //   },
-  //   [headerStyle]
-  // )
   
   return (
     <Navbar_container style={{ ...headerStyle}}>
       <Transition toggle={scroll.visible}>
         <NavGrid>
-          
             <LogoGridItem>
             <ScrollLink name="greetings">
               <Logo/>
               </ScrollLink>
             </LogoGridItem>
-          
-          
           <AboutLinkGridItem>
             <ScrollLink name="about">
               About Me

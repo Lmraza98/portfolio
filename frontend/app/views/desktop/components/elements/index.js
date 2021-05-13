@@ -7,8 +7,9 @@ import { GreetingsLine, AboutLine, ExperienceLine, WorkLine } from './ScrollLine
 import PageLink from './PageLink'
 import Logo from './Logo'
 import ProfileCard from './ProfileCard'
-import SideMenu from './SideMenu'
+import SideMenu from '../modules/SideMenu'
 import { HeaderOne, HeaderTwo, HeaderThree } from './Headers'
+import Chat from './Chat'
 
 export { 
     Loading,
@@ -27,5 +28,6 @@ export {
     GreetingsLine, 
     AboutLine, 
     ExperienceLine, 
+    Chat,
     WorkLine 
 }

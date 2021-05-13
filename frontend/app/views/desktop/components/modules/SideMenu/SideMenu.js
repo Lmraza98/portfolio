@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import PageLink from '../PageLink'
+import PageLink from '../../elements/PageLink'
 const MenuContainer= styled.div`
     // left: ${props => props.left};
     // position: fixed;
