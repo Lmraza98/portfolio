@@ -13,7 +13,7 @@ const theme = {
     messageTextSize: '35px'
 }
 const lightColors = {
-    backgroundColor: '#FFFDFD',
+    backgroundColor: '#9cc7ff',
     navBackgroundColor: '#FFFDFD ',
     navLinkColor: '#000000',
     pageLinkColor: '#0B3C49',

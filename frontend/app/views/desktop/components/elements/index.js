@@ -10,6 +10,9 @@ import ProfileCard from './ProfileCard'
 import SideMenu from '../modules/SideMenu'
 import { HeaderOne, HeaderTwo, HeaderThree } from './Headers'
 import Chat from './Chat'
+import MenuButton from './MenuButton'
+import ContactForm from './ContactForm'
+import InfoCard from './InfoCard'
 
 export { 
     Loading,
@@ -29,5 +32,8 @@ export {
     AboutLine, 
     ExperienceLine, 
     Chat,
-    WorkLine 
+    WorkLine,
+    MenuButton,
+    ContactForm,
+    InfoCard
 }

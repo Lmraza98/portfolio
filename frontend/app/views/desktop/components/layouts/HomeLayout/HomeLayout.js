@@ -10,6 +10,7 @@ const HomeLayoutContainer = styled.div`
     flex-direction: row;
     background-color: ${props => props.theme.backgroundColor};
     transition: background-color 0.5s ease;
+    z-index: -2;
     // transition: ease;
 `
 const MainContainer = styled.div`

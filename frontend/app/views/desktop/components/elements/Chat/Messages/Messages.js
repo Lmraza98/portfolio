@@ -7,7 +7,7 @@ const MessagesContainer = styled.div`
     flex-direction: column-reverse;
     width: 100%;
     font-size: ${ props => props.theme.messageTextSize};
-    overflow: auto;
+    overflow: scroll;
     ::-webkit-scrollbar {
         display: none;
     }

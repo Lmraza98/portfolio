@@ -5,25 +5,26 @@ import { ScrollLink, scroller } from '../ScrollLink'
 const ProfileCardGrid = styled.div`
     display: grid;
     grid-template-rows: 15% 95%;
-    // padding-top: 10%;
-    height: 100%;
+    padding-bottom: 10%;
+    height: 80%;
     width: 100%;
-    alig
 `
 const ProfileSpriteContainer = styled.div`
-    width: 150px;
-    height: 150px;
+    // width: 100;
+    // height: 100;
+    padding: 25%;
     border-radius 50%;
     background-color: white;
     align-self: center;
     grid-row-start: 2;
     grid-row-end: 3;
+    margin: 5%;
 `
 const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
     // justify-content: center;
-    padding-top: 20%;
+    // padding-top: 10%;
     width: 100%;
     // height: 100%;
 `
@@ -55,6 +56,16 @@ const ButtonContainer = styled.div`
 const LogoContainer = styled.div`
     align-self: center;
 `
+const PersonalInfoContainer = styled.div`
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    // padding-right: 5%;
+    // margin-right: 5%;
+    background-color: #e08e22;
+    border-right: 20px solid #e08e22;
+`
+
 export function ProfileCard({children}){
     return (
         <ProfileCardGrid>
@@ -66,15 +77,17 @@ export function ProfileCard({children}){
                 <ProfileSpriteContainer>
 
                 </ProfileSpriteContainer>
-                <Name>
-                    Lucas
-                </Name>
-                <Title>
-                    Software Engineer
-                </Title>
-                <Place>
-                    Boston, MA
-                </Place>
+                <PersonalInfoContainer>
+                    <Name>
+                        Lucas
+                    </Name>
+                    <Title>
+                        Software Engineer
+                    </Title>
+                    <Place>
+                        Boston, MA
+                    </Place>
+                </PersonalInfoContainer>
             </InfoContainer>   
         </ProfileCardGrid>
         

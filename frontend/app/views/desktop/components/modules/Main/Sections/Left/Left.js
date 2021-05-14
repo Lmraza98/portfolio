@@ -1,102 +1,83 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
-import ProfileCard from '../../../../elements/ProfileCard'
+import { ProfileCard, MenuButton, ContactForm, Chat } from '../../../../elements'
 
 import { GlobalContext, Store } from '../../../../../../../contexts/GlobalContext'
 const LeftContainer = styled.div`
-
-
-
-`
-const CardContainer = styled.div`
-    position: flex;
-    flex-direction: row;
-    justify-content: column;
-    align-items: center;
     height: 100%;
     background-color: rgba(255, 255, 255, .15);  
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    flex-direction: column;
+    z-index: -1;
 `
-const PlusButton = styled.div`
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    border: 1px solid ${props => props.theme.textColor};
-    // background-color: ${props => props.theme.oppositeText};
+// const CardContainer = styled.div`
+//     position: flex;
+//     flex-direction: row;
+//     justify-content: column;
+//     justify-self: center;
+//     height: 100%;
+// `
+const CardGridItem = styled.div`
+    grid-row-start: 1; 
+    grid-row-end: 2;
+    justify-content: start;
+    align-self: start;
+    z-index: 1;
+`
+const ChatGridItem = styled.div`
+    grid-row-start: 2; 
+    grid-row-end: 3;
+    justify-content: center;
+    z-index: 1;
+`
+const InfoSquare = styled.div`
+    grid-row-start: 2; 
+    grid-row-end: 3;
+    
+    width: 100%;
+    height: 100%;
+    z-index: 0;
     position: relative;
-    // margin-left: 3px;
-    :after {
-        content: " ";
-        position: absolute;
-        display: block;
-        background-color: ${props => props.theme.textColor};
-        height: 2px;
-        margin-top: -2px;
-        top: 50%;
-        left: 5px;
-        right: 5px;
-        z-index: 9;
-    }
-    :before {
-        content: " ";
-        position: absolute;
-        display: block;
-        background-color: ${props => props.theme.textColor};
-        width: 2px;
-        margin-left: -1px;
-        left: 50%;
-        top: 5px;
-        bottom: 5px;
-        z-index: 9;
-    }
 `
-const MinusButton = styled.div`
-    border-radius: 50%;
-    border: 1px solid ${props => props.theme.textColor};
-    width: 25px;
-    height: 25px;
-    // background-color: ${props => props.theme.textColor};
-    position: relative;
-    // margin-left: 3px;
-    :after {
-        content: " ";
-        position: absolute;
-        display: block;
-        background-color: ${props => props.theme.textColor};
-        height: 2px;
-        margin-top: -1px;
-        top: 50%;
-        left: 5px;
-        right: 5px;
-        z-index: 9;
-    }
+const ContactGridItem = styled.div`
+    justify-content: start;
+    grid-row-start: 3; 
+    grid-row-end: 4;
 `
-const MenuButtonContainer = styled.div`
-
-
-
+const SendMessageContainer = styled.div`
+    border-right: 20px solid #e08e22;
+    background-color: #e08e22;
+    width: 100%;
+    // height: 100%;
+    font-size:30px;
+    text-align: center;
+    font-family: ${props => props.theme.navFont};
+    color: ${props => props.theme.textColor};
 `
-const MenuButton = ({show}) => {
-    return (
-        show ? <MinusButton/> : <PlusButton/>
-    )
-}
+
 
 const Left = () => {
-    const [ showMenu, setShowMenu ] = useState(true)
-    const [ state, dispatch ] = useContext(GlobalContext)
-    console.log("state: " + JSON.stringify(state))
-    const handleClick = (event) => {
-        dispatch( {type: 'SET_MENU'})
-        setShowMenu(!showMenu)
-    }
+    
     return (
-        <CardContainer>
-            <ProfileCard>
-                <MenuButtonContainer onClick={handleClick}>
-                    <MenuButton show={showMenu}/>
-                </MenuButtonContainer>
-            </ProfileCard>
-        </CardContainer>
+        <LeftContainer>
+            
+            <CardGridItem>
+                <MenuButton/>
+                <ProfileCard/>
+            </CardGridItem>
+            <ChatGridItem>
+                <Chat/>
+            </ChatGridItem>
+            <ContactGridItem>
+                <SendMessageContainer>
+                    Reach Out
+                </SendMessageContainer>
+                <ContactForm/>
+            </ContactGridItem>
+            
+        </LeftContainer>
+        
     )
 }
 

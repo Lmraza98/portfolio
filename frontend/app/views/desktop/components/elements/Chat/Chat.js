@@ -23,6 +23,7 @@ const ChatInputContainer = styled.form`
 const ChatInput = styled.input`
     grid-column-start: 1;
     grid-column-end: 2;
+    height: 20px;
     background-color:transparent;
     // decorations: none;
     outline: none;
@@ -30,13 +31,13 @@ const ChatInput = styled.input`
     border-right: hidden;
     border-left: hidden;
     border-bottom: hidden;
-    padding-left: 10%;
+    // padding-left: 10%;
     color: ${props => props.theme.textColor};
-    font-size: ${props => props.theme.messageInputTextSize};
-    padding: .25em;
+    font-size: 1rem;
+    // padding: .25em;
     padding-left: 10%;
-    padding: .25em;
-    padding-left: 10%;
+    // padding: .25em;
+    // padding-left: 10%;
 `
 const ChatSubmitButton = styled.button`
     grid-column-start: 2;
@@ -48,10 +49,10 @@ const ChatSubmitButton = styled.button`
     color: ${props => props.theme.textColor};
     border: none;
     border-left: 2px solid ${props => props.theme.textColor};
-    font-size: ${props => props.theme.h1TextSize};
-
+    font-size: 10;
+    
     :hover {
-        font-size: 24px;
+        font-size: 18px;
         border-left: 3px solid ${props => props.theme.textColor};
     }
 `

@@ -21,7 +21,9 @@ const StyledMessage = styled.div`
     background-color: ${props => props.isBot ? props.theme.botMessageColor : props.theme.userMessageColor};
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 18px;
 `
+
 const HoverMesssageContainer = styled.div`
     display: flex;
     flex-direction: column;
