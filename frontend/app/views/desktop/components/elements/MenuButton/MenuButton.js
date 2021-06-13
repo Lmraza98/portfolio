@@ -36,6 +36,7 @@ const PlusButton = styled.div`
         bottom: 5px;
         z-index: 9;
     }
+    transition: color ease 2s;
 `
 const MinusButton = styled.div`
     border-radius: 50%;
@@ -55,6 +56,7 @@ const MinusButton = styled.div`
         right: 5px;
         z-index: 9;
     }
+    transition: color ease 2s;
 `
 const Button = ({show}) => {
     return (

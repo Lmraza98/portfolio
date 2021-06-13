@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import PageLink from '../../elements/PageLink'
+import { PageLink } from '../../elements'
 const SideMenuGridItem = styled.div`
     grid-row-start: ${props => props.start};
     grid-row-end: ${props => props.start};
-    background-color: ${props => props.item === 'blog' ? 'grey' : 'transparent'};
+    background-color: ${props => props.theme.mode === 'light' ?  (props.item === 'blog' ? '#000000' : 'transparent') : (props.item === 'blog' ? '#bababa' : 'transparent')};
+    transition: color ease 2s;
+    transition: background-color ease 2s;
+    
 `
 const ItemGrid = styled.div`
     display: grid; 
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 50px 1fr;
+    height: 100%;
+    
 `
 const ItemGridItem = styled.div`
     grid-row-start: ${props => props.start};
-    grid-row-start: ${props => props.end};
-    
+    grid-row-end: ${props => props.end};
+    // align-items: center;
 `
 const MenuGridContainer= styled.div`
     display: grid; 
@@ -22,11 +27,14 @@ const MenuGridContainer= styled.div`
     // visibility: ${props => props.show ? "hidden" : "none"};
     width: ${props => props.show ? "20%" : "0px"};
     transition:  width .7s;
+    // transition: color ease 2s;
     
 `
 const IconContainer = styled.div`
     width: 80%;
+    // height: 100%;
     // padding: 10%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,42 +50,23 @@ const Icon = styled.i`
     font-size: ${props => props.show ? "50px" : "0px"};
     color: ${props => props.theme.textColor};
     transition:  font-size .25s;
-`
-const LinksGridItem = styled.div`
-    grid-row-start: 2;
-    grid-row-end: 3;
-    height: 100%;
-`
-const LinksHeaderGridItem = styled.div`
-    grid-row-start: 1;
-    grid-row-end: 2;
+    transition: color ease 2s;
 `
 const Header = styled.div`
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.mode === 'light' ?  (props.item === 'blog' ? 'white' : 'black') : (props.item === 'blog' ? 'black' : 'white')};
     font-size: ${props => props.show ? "40px" : "0px"};
     font-family: ${props => props.theme.navFont};
     // height: 90%;
     // padding-top: 10%;
+    transition: color ease 2s;
     
 `
 const LinksContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
-`
-const ArticlesGridItem = styled.div`
-    grid-row-start: 5;
-    grid-row-end: 6;
-    height: 100%;
-
-
-`
-const ArticlesHeaderGridItem = styled.div`
-    grid-row-start: 4;
-    grid-row-end: 5;
-    
 `
 const ArticlesListContainer = styled.div`
 
@@ -94,13 +83,10 @@ const BlogCardGridItem = styled.div`
 const BlogCardContainer = styled.div`
     display: flex; 
     flex-direction: column;
-    padding-top: 10%;
+    // padding-top: 10%;
     height: 90%;
     background-color: grey;
 
-`
-const BlogCard = styled.div`
-    bacground-color: grey;
 `
 const BlogExplanation = styled.div`
     color: ${ props => props.theme.navLinkColor };
@@ -121,9 +107,9 @@ const SideMenu = ({show}) => {
                             <ItemGridItem start="2" end="3">
                                 <LinksContainer>
                                     <IconContainer>
-                                        <PageLink href="blog"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
-                                        <PageLink href="blog"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
-                                        <PageLink href="blog"><Icon show={show} className="fab fa-github"></Icon></PageLink>
+                                        <PageLink href="https://www.youtube.com"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
+                                        <PageLink href="https://www.linkedin.com"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
+                                        <PageLink href="https://www.github.com"><Icon show={show} className="fab fa-github"></Icon></PageLink>
                                     </IconContainer>
                                 </LinksContainer>
                             </ItemGridItem>
@@ -131,30 +117,33 @@ const SideMenu = ({show}) => {
                         
                     </SideMenuGridItem>
                     <SideMenuGridItem item="blog" start="2" end="3">
-                        <ItemGrid >
+                        <ItemGrid>
                             <ItemGridItem start="1" end="2">
-                                <Header show={show}>Checkout My Blog!</Header>
+                                <Header item="blog" show={show}>Blog</Header>
                             </ItemGridItem>
                             <ItemGridItem start="2" end="3">
-                                <BlogCardContainer>
+                                {/* <BlogCardContainer>
                                     <BlogExplanation>
                                         Checkout my blog!
                                     </BlogExplanation>
                                     <PageLinkContainer>
 
                                     </PageLinkContainer>
-                                </BlogCardContainer>
+                                </BlogCardContainer> */}
                             </ItemGridItem>
                         </ItemGrid>
                     </SideMenuGridItem>
                     <SideMenuGridItem start="3" end="4"> 
-                    <ItemGridItem start="1" end="2">
-                        <Header show={show}>Articles</Header>
-                    </ItemGridItem>
-                    <ItemGridItem start="2" end="3">
-                        <ArticlesListContainer>
-                        </ArticlesListContainer>
-                    </ItemGridItem>
+                    <ItemGrid >
+                        <ItemGridItem start="1" end="2">
+                            <Header show={show}>Videos</Header>
+                        </ItemGridItem>
+                        <ItemGridItem start="2" end="3">
+                            <ArticlesListContainer>
+                            </ArticlesListContainer>
+                        </ItemGridItem>
+                    </ItemGrid>
+                    
                     </SideMenuGridItem>
                 </MenuGridContainer> 
     )

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Logo from "../Logo";
 import { ScrollLink, scroller } from '../ScrollLink'
+import ProfileImage from '../ProfileImage'
 
 const ProfileCardGrid = styled.div`
     display: grid;
@@ -10,60 +11,68 @@ const ProfileCardGrid = styled.div`
     width: 100%;
 `
 const ProfileSpriteContainer = styled.div`
-    // width: 100;
-    // height: 100;
-    padding: 25%;
-    border-radius 50%;
-    background-color: white;
-    align-self: center;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    margin: 5%;
+   
 `
 const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    // justify-content: center;
+    justify-content: space-between;
     // padding-top: 10%;
     width: 100%;
     // height: 100%;
 `
 const Name = styled.div`
-    font-size:35px;
-    text-align: center;
+    font-size:30px;
+    text-align: left;
     font-family: ${props => props.theme.navFont};
-    color: ${props => props.theme.textColor};
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
 `
 const Title = styled.div`
     font-size: 20px;
-    text-align: center;
+    text-align: left;
     font-family: ${props => props.theme.navFont};
-    color: ${props => props.theme.textColor};
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
 `
 const Place = styled.div`
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     font-family: ${props => props.theme.navFont};
-    color: ${props => props.theme.textColor};
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
 `
 const ButtonContainer = styled.div`
     // align-self: start;
     padding-left:5px;
     padding-top:5px;
+    grid-column-start: 1;
+    grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
 `
 const LogoContainer = styled.div`
     align-self: center;
 `
-const PersonalInfoContainer = styled.div`
+const PersonalInfoGrid = styled.div`
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
     // padding-right: 5%;
     // margin-right: 5%;
-    background-color: #e08e22;
-    border-right: 20px solid #e08e22;
+    background-color: ${props => props.theme.sideColorSecondary};
+    border-right: 10px solid ${props => props.theme.sideColorSecondary};
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
 `
 
 export function ProfileCard({children}){
@@ -77,9 +86,9 @@ export function ProfileCard({children}){
                 <ProfileSpriteContainer>
 
                 </ProfileSpriteContainer>
-                <PersonalInfoContainer>
+                <PersonalInfoGrid>
                     <Name>
-                        Lucas
+                        Lucas Raza
                     </Name>
                     <Title>
                         Software Engineer
@@ -87,7 +96,7 @@ export function ProfileCard({children}){
                     <Place>
                         Boston, MA
                     </Place>
-                </PersonalInfoContainer>
+                </PersonalInfoGrid>
             </InfoContainer>   
         </ProfileCardGrid>
         

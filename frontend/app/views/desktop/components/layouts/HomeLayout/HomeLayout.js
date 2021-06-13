@@ -13,49 +13,26 @@ const HomeLayoutContainer = styled.div`
     z-index: -2;
     // transition: ease;
 `
-const MainContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    transition: ease;
-    width: 100%;
-    height: 100%;
+const Container = styled.div
 `
-const GreetingsGridItem = styled(Greetings)`
-    // display: flex;
-    // flex-direction: row;
-    // // height: 400px;
-    height: 100%;
-`
-const AboutGridItem = styled(About)`
-    display: flex;
-    flex-direction: column;
-`
-const ExperienceGridItem = styled(Experience)`
-    display: flex;
-    flex-direction: column;
-`
-const WorkGridItem = styled(Work)`
-    display: flex;
-    flex-direction: column;
-`
-const ContactGridItem = styled(Contact)`
-    display: flex;
-    flex-direction: column;
+    // height: 100%;
+    // width: 100%;
 `
 
 function HomeLayout({children}){
     const [ state, dispatch ] = useContext(GlobalContext)
     const menu = state.menu
     return (
-        <>
+        <Container>
         <HomeLayoutContainer>
             <SideMenu show={menu}/>
             <Main>
                 {/*  */}
             </Main>
+            
         </HomeLayoutContainer>
         <Footer/>
-        </>
+        </Container>
     )
 }
 

@@ -23,7 +23,7 @@ const NavGrid = styled.div`
   height: 64px;
   width: 100%;
   display: inline-grid;
-  align-items: center;
+  align-items: start;
   grid-template-columns: 20% repeat(6, 1fr) 15%;
 `;
 
@@ -59,6 +59,20 @@ const ThemeToggleGridItem = styled.div`
   grid-column-end: 9;
   justify-self: center;
 `
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-itylems: center;
+  width: 100%;
+`
+const LinksGridItem = styled.div`
+  grid-column-start: 2;
+  grid-column-end: 8;
+  // justify-self: center;
+  padding-left: 10px;
+  padding-right: 10px;
+`
 
 const Desktop_Navbar = ({theme}) => {
   const { mounted } = useContext(GlobalContext)
@@ -70,31 +84,27 @@ const Desktop_Navbar = ({theme}) => {
     <Navbar_container style={{ ...headerStyle}}>
       <Transition toggle={scroll.visible}>
         <NavGrid>
-            <LogoGridItem>
+          <LogoGridItem>
             <ScrollLink name="greetings">
               <Logo/>
-              </ScrollLink>
-            </LogoGridItem>
-          <AboutLinkGridItem>
-            <ScrollLink name="about">
-              About Me
-            </ScrollLink> 
-          </AboutLinkGridItem>
-          <ExperienceLinkGridItem>
+            </ScrollLink>
+          </LogoGridItem>
+          <LinksGridItem>
+            <LinkContainer>
+              <ScrollLink name="about">
+                About Me
+              </ScrollLink> 
               <ScrollLink name="experience">
                 Experience
               </ScrollLink>
-          </ExperienceLinkGridItem>
-          <WorkLinkGridItem>
               <ScrollLink name="work">
                 Work
               </ScrollLink>
-          </WorkLinkGridItem>
-          <ContactLinkGridItem>
               <ScrollLink name="contact">
                 Contact
               </ScrollLink>
-          </ContactLinkGridItem>
+            </LinkContainer>
+          </LinksGridItem>
           <ThemeToggleGridItem>
             <ThemeToggle/>
           </ThemeToggleGridItem>

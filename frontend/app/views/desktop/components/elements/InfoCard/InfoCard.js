@@ -5,11 +5,10 @@ const InfoCardContainer = styled.div`
     // background-color: #e08e22;
     // width: 80%;
     // height: 90%;
-    padding: 5%;
+    // padding: 5%;
     // padding-left: 5%;
     // background-color: #e08e22;
     // margin: 10%;
-    color: ${props => props.theme.textColor};
     font-family: ${props => props.theme.textColor};
     // font-size: 25px;
     display: flex;
@@ -37,7 +36,7 @@ const InfoCard = () => {
     return (
         <InfoCardContainer>
             <ChatDescriptionContainer>
-                Nice to meet you, 
+                Nice to meet you,
             </ChatDescriptionContainer>
         </InfoCardContainer>
     )

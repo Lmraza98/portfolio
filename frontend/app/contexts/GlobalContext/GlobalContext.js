@@ -12,6 +12,11 @@ const Reducer = (state, action) => {
                 ...state,
                 menu: !state.menu
             };
+        case 'SET_ONLINE':
+            return {
+                ...state,
+                online: action.payload
+            }
         case 'SET_ERROR':
             return {
                 ...state,
@@ -24,7 +29,8 @@ const Reducer = (state, action) => {
 
 const initialState = {
     theme: 'light',
-    menu: true
+    menu: true,
+    online: null
 };
 
 const Store = ({children}) => {
@@ -38,22 +44,3 @@ const Store = ({children}) => {
 
 export const Context = createContext(initialState);
 export default Store;
-
-// export const GlobalContext = React.createContext(undefined)
-// export const GlobalDispatchContext = React.createContext(undefined)
-
-// export function GlobalProvider({children, isMounted}){
-//     const [global, setGlobal] = useState({
-//         mounted: isMounted,
-//         theme: 'light',
-//         menu: true
-//     })
-//     console.log(global)
-//     return (
-//         <GlobalContext.Provider value={global}>
-//             <GlobalDispatchContext.Provider value={setGlobal}>
-//             {children}
-//             </GlobalDispatchContext.Provider>
-//         </GlobalContext.Provider>
-//     )
-// }

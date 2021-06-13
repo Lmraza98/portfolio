@@ -5,11 +5,14 @@ import { ProfileCard, MenuButton, ContactForm, Chat } from '../../../../elements
 import { GlobalContext, Store } from '../../../../../../../contexts/GlobalContext'
 const LeftContainer = styled.div`
     height: 100%;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: ${props => props.theme.sideColor};
+    transition: background-color ease 2s;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 25% 1fr 25%;
     flex-direction: column;
     z-index: -1;
+    transition: background-color ease 2s;
+    
 `
 // const CardContainer = styled.div`
 //     position: flex;
@@ -24,6 +27,7 @@ const CardGridItem = styled.div`
     justify-content: start;
     align-self: start;
     z-index: 1;
+    
 `
 const ChatGridItem = styled.div`
     grid-row-start: 2; 
@@ -40,21 +44,7 @@ const InfoSquare = styled.div`
     z-index: 0;
     position: relative;
 `
-const ContactGridItem = styled.div`
-    justify-content: start;
-    grid-row-start: 3; 
-    grid-row-end: 4;
-`
-const SendMessageContainer = styled.div`
-    border-right: 20px solid #e08e22;
-    background-color: #e08e22;
-    width: 100%;
-    // height: 100%;
-    font-size:30px;
-    text-align: center;
-    font-family: ${props => props.theme.navFont};
-    color: ${props => props.theme.textColor};
-`
+
 
 
 const Left = () => {
@@ -69,12 +59,7 @@ const Left = () => {
             <ChatGridItem>
                 <Chat/>
             </ChatGridItem>
-            <ContactGridItem>
-                <SendMessageContainer>
-                    Reach Out
-                </SendMessageContainer>
-                <ContactForm/>
-            </ContactGridItem>
+            
             
         </LeftContainer>
         

@@ -9,6 +9,7 @@ const StyledLink = styled.a
   color: ${ props => props.theme.navLinkColor };
   font-family: "${ props => props.theme.navFont}";
   font-size: ${ props => props.theme.h1TextSize };
+  align-self: center;
 `
 const PageLink = ({ children, href }) => {
   return (

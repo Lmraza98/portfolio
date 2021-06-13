@@ -3,7 +3,7 @@ import { Center, Left, Right, Top } from './Sections'
 
 const MainGridContainer = styled.div`
     width:100%;
-    height:100%;
+    height:100vh;
     display: grid;
     grid-template-columns: 20% 65% 15%;
     grid-template-rows: 5% 85% 10%;
@@ -13,6 +13,7 @@ const LeftGridItem = styled.div`
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 4;
+    transition: color background-color ease 2s;
 `
 const CenterGridItem = styled.div`
     grid-column-start: 2;
@@ -35,7 +36,8 @@ const RightGridItem = styled.div`
     grid-column-end: 4;
     grid-row-start: 1; 
     grid-row-end: 4;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: ${props => props.theme.sideColor};
+    transition: color background-color ease 2s;
     color: ${props => props.theme.textColor};
     font-family: ${props => props.theme.navFont};
     text-align: center;

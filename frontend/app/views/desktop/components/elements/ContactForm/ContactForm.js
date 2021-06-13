@@ -2,27 +2,32 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Form = styled.form`
-    width: 100%;
+    // width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    // text-align: center;
+    text-align: left;
     justify-content: start;
-    align-items: center;
+    align-items: left;
     font-family: ${props => props.theme.navFont};
     color: ${props => props.theme.textColor};
     size: ${props => props.theme.h1TextSize};
+    transition: color ease 2s;
     // justify-self: start;
+    padding-left: 10px;
+    padding-right: 10px;
+    // padding-right: 10px;
 `
 const Label = styled.label`
-    
+    // padding-left: 10px;
 
 `
 const Input = styled.input`
-
+    align-self: center;
+    
 `
 const Message = styled.textarea`
-
+    align-self: center;
 `
 const Button = styled.button`
 
@@ -67,19 +72,27 @@ const StyledContactForm = styled(ContactForm)`
         outline: none;
         text-self: left;
         width: 100%;
+        justify-content: left;
+        left: 0;
+        align-self: left;
+
     }
     .message {
         outline: none;
-        width: 80%;
+        width: 100%;
         // height: 50%;
         resize: vertical; 
-        min-height: 30%;
-        height: 30%;
+        // height:  200px;
+        height: 10%;
+        min-height: 20px;
+        
         max-height: 50%;  
     }
     .name {
         outline: none;
-        width: 80%;
+        width: 100%;
+        text-self: left;
+        
     }
     .button {
         outline: none;
@@ -90,7 +103,8 @@ const StyledContactForm = styled(ContactForm)`
         border-radius: 5px;
         border: 1px solid ${props => props.theme.textColor};
         margin-top: 5px;
-        width: 80%;
+        width: 100%;
+        transition: color ease 2s;
         
     }
 `;

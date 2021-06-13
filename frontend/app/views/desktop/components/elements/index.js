@@ -13,6 +13,7 @@ import Chat from './Chat'
 import MenuButton from './MenuButton'
 import ContactForm from './ContactForm'
 import InfoCard from './InfoCard'
+import Status from './Status'
 
 export { 
     Loading,
@@ -35,5 +36,6 @@ export {
     WorkLine,
     MenuButton,
     ContactForm,
-    InfoCard
+    InfoCard, 
+    Status
 }

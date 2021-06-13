@@ -38,6 +38,7 @@ const ChatInput = styled.input`
     padding-left: 10%;
     // padding: .25em;
     // padding-left: 10%;
+    transition: color ease 2s;
 `
 const ChatSubmitButton = styled.button`
     grid-column-start: 2;
@@ -55,6 +56,7 @@ const ChatSubmitButton = styled.button`
         font-size: 18px;
         border-left: 3px solid ${props => props.theme.textColor};
     }
+    transition: color ease 2s;
 `
 const MessageListContainer = styled.div`
     // background-color:${props => props.theme.chatForegroundColor};

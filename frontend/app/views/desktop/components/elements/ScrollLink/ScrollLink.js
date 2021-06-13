@@ -8,7 +8,8 @@ const StyledScrollLink = styled.div
   text-decoration: none;
   color: ${ props => props.theme.navLinkColor };
   font-family: "${ props => props.theme.navFont}";
-  font-size: ${ props => props.theme.h1TextSize };
+  font-size: 40px;
+  transition: color ease 2s;
 `
 
 export const ScrollLink = ({children, name}) => {
