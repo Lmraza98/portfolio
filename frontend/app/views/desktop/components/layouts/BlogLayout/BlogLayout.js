@@ -5,7 +5,7 @@ const StyledBlogLayout = styled.div`
     display: flex;
     flex-direction: column;
 `
-function BlogLayout({children}){
+function BlogLayout({ children }){
     return (
         <>
             <Navbar/>   

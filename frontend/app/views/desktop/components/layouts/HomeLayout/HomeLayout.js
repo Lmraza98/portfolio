@@ -2,7 +2,15 @@ import { Navbar, SideMenu, Main, Greetings, About, Experience, Work, Contact, Fo
 import styled from 'styled-components'
 import { useContext } from 'react'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
-
+import HorizontalScroll from 'react-scroll-horizontal'
+ 
+// const HorizontalScrollMain = ({children}) => {
+//     return (
+//         <HorizontalScroll>
+//             {children}
+//         </HorizontalScroll>
+//     )
+// }
 const HomeLayoutContainer = styled.div`
     height: 100%;
     width: 100%;
@@ -15,8 +23,7 @@ const HomeLayoutContainer = styled.div`
 `
 const Container = styled.div
 `
-    // height: 100%;
-    // width: 100%;
+    // 
 `
 
 function HomeLayout({children}){
@@ -26,9 +33,7 @@ function HomeLayout({children}){
         <Container>
         <HomeLayoutContainer>
             <SideMenu show={menu}/>
-            <Main>
-                {/*  */}
-            </Main>
+                <Main/>
             
         </HomeLayoutContainer>
         <Footer/>

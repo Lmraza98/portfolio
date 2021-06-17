@@ -8,10 +8,10 @@ export function HomeDesktopView() {
         </HomeLayout>
     )
 }
-export function BlogDesktopView() {
+export function BlogDesktopView({posts, page}) {
     return (
         <BlogLayout>
-            <BlogTemplate/>
+            <BlogTemplate posts={posts} page={page}/>
         </BlogLayout>
     )
 }
