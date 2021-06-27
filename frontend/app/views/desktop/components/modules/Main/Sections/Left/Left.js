@@ -24,7 +24,8 @@ const LeftContainer = styled.div`
 const CardGridItem = styled.div`
     grid-row-start: 1; 
     grid-row-end: 2;
-    justify-content: start;
+    text-align: center;
+    justify-content: center;
     align-self: start;
     z-index: 1;
     
@@ -53,7 +54,7 @@ const Left = () => {
         <LeftContainer>
             
             <CardGridItem>
-                <MenuButton/>
+                
                 <ProfileCard/>
             </CardGridItem>
             <ChatGridItem>

@@ -8,6 +8,7 @@ const CheckBoxWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  justify-self: center;
 `;
 const CheckBoxLabel = styled.label`
   position: absolute;

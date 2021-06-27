@@ -4,7 +4,7 @@ import { ScrollElement } from '../../elements/ScrollElement'
 
 const WorkGridContainer = styled.div`
     display: grid;
-    height: 500px;
+    height: 100%;
     align-items: center;
     border-top: 1px solid black;
 `
@@ -14,12 +14,12 @@ const WorkGridItem = styled.div`
 
 export const Work = ({children, name}) => {
     return (
-        <ScrollElement name="work">
+        // <ScrollElement name="work">
             <WorkGridContainer>
                 <WorkGridItem>
                     Work
                 </WorkGridItem>
             </WorkGridContainer>
-        </ScrollElement>
+        // {/* </ScrollElement> */}
     )
 }

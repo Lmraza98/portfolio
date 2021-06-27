@@ -16,14 +16,14 @@ const ProfileSpriteContainer = styled.div`
 const InfoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     // padding-top: 10%;
     width: 100%;
     // height: 100%;
 `
 const Name = styled.div`
     font-size:30px;
-    text-align: left;
+    text-align: center;
     font-family: ${props => props.theme.navFont};
     color: white;
     grid-column-start: 1;
@@ -31,7 +31,7 @@ const Name = styled.div`
 `
 const Title = styled.div`
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     font-family: ${props => props.theme.navFont};
     color: white;
     grid-column-start: 1;
@@ -41,7 +41,7 @@ const Title = styled.div`
 `
 const Place = styled.div`
     font-size: 18px;
-    text-align: left;
+    text-align: center;
     font-family: ${props => props.theme.navFont};
     color: white;
     grid-column-start: 1;
@@ -71,7 +71,9 @@ const PersonalInfoGrid = styled.div`
     border-right: 10px solid ${props => props.theme.sideColorSecondary};
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    align-text: center;
+    text-align: center;
+    height: 50%;
 
 `
 

@@ -7,10 +7,10 @@ const Reducer = (state, action) => {
                 ...state,
                 theme: action.payload === true ? 'dark' : 'light'
             };
-        case 'SET_MENU':
+        case 'SET_NAV':
             return {
                 ...state,
-                menu: !state.menu
+                navigation: action.payload
             };
         case 'SET_ONLINE':
             return {
@@ -29,7 +29,13 @@ const Reducer = (state, action) => {
 
 const initialState = {
     theme: 'light',
-    menu: true,
+    menu: {
+        greetings: true,
+        about: false,
+        work: false,
+        contact: false
+    },
+    navigation: [],
     online: null
 };
 

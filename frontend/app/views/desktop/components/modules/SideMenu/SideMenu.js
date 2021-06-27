@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { PageLink } from '../../elements'
+import { PageLink, Chat } from '../../elements'
 const SideMenuGridItem = styled.div`
     grid-row-start: ${props => props.start};
     grid-row-end: ${props => props.start};
@@ -47,8 +47,8 @@ const PageLinkContainer = styled.div`
     // top: 0;
 `
 const Icon = styled.i`
-    font-size: ${props => props.show ? "50px" : "0px"};
-    color: ${props => props.theme.textColor};
+    font-size: ${props => props.show ? "25px" : "0px"};
+    color: ${props => props.theme.textColor === "#ffffff" ? "#000000" : " #ffffff"};
     transition:  font-size .25s;
     transition: color ease 2s;
 `
@@ -100,43 +100,18 @@ const SideMenu = ({show}) => {
     return (
                 <MenuGridContainer show={show} left="-100px">
                     <SideMenuGridItem start="1" end="2">
-                        <ItemGrid>
-                            <ItemGridItem start="1" end="2">
-                                <Header show={show}>LINKS</Header>
-                            </ItemGridItem>
-                            <ItemGridItem start="2" end="3">
-                                <LinksContainer>
-                                    <IconContainer>
-                                        <PageLink href="https://www.youtube.com"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
-                                        <PageLink href="https://www.linkedin.com"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
-                                        <PageLink href="https://www.github.com"><Icon show={show} className="fab fa-github"></Icon></PageLink>
-                                    </IconContainer>
-                                </LinksContainer>
-                            </ItemGridItem>
-                        </ItemGrid>
-                        
+                        <Chat/>
                     </SideMenuGridItem>
                     <SideMenuGridItem item="blog" start="2" end="3">
-                        <ItemGrid>
-                            <ItemGridItem start="1" end="2">
-                                <Header item="blog" show={show}>Blog</Header>
-                            </ItemGridItem>
-                            <ItemGridItem start="2" end="3">
-                                {/* <BlogCardContainer>
-                                    <BlogExplanation>
-                                        Checkout my blog!
-                                    </BlogExplanation>
-                                    <PageLinkContainer>
-
-                                    </PageLinkContainer>
-                                </BlogCardContainer> */}
-                            </ItemGridItem>
-                        </ItemGrid>
+                        <Header item="blog" show={show}>Blog</Header>
+                        <PageLink href="https://www.youtube.com"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
+                        <PageLink href="https://www.linkedin.com"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
+                        <PageLink href="https://www.github.com"><Icon show={show} className="fab fa-github"></Icon></PageLink>
                     </SideMenuGridItem>
                     <SideMenuGridItem start="3" end="4"> 
                     <ItemGrid >
                         <ItemGridItem start="1" end="2">
-                            <Header show={show}>Videos</Header>
+                            <Header show={show}>Contact</Header>
                         </ItemGridItem>
                         <ItemGridItem start="2" end="3">
                             <ArticlesListContainer>

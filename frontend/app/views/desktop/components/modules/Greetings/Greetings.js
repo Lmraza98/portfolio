@@ -4,36 +4,69 @@ import { Chat,  GreetingsLine, ScrollElement } from '../../elements'
 
 const GreetingsGridContainer = styled.div`
     display: grid;
-    height: 80vh;
-    align-items: center;
-    grid-template-columns: 15% 10% 75%;
-    grid-template-rows: 20% 80%;
-`
-const GreetingsLineGridItem = styled.div`
-    justify-self: center;
-    
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-start: 2;
-`
-const ChatGridItem = styled.div`
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-start: 2;
-    width: 100%;
     height: 100%;
+    align-items: center;
+`
+const GreetingsGridItem = styled.div`
+    justify-self: center;
+`
+const MainStatement = styled.div`
+
+
 `
 
 
 export const Greetings = ({children, name}) => {
     return (
-        <ScrollElement name="greetings">
-            <GreetingsLineGridItem><GreetingsLine/></GreetingsLineGridItem>
-            <GreetingsGridContainer>
-                <ChatGridItem><Chat/></ChatGridItem>
-            </GreetingsGridContainer>
-        </ScrollElement>
+    // <ScrollElement name="experience">
+        <GreetingsGridContainer>
+            <GreetingsGridItem>
+                Greetings
+            </GreetingsGridItem>
+        </GreetingsGridContainer>
+    // {/* </ScrollElement> */}
     )
 }
+
+export async function getStaticProps() {
+    const apolloClient = getApolloClient();
+  
+    const data = await apolloClient.query({
+      query: gql`
+        {
+          generalSettings {
+            title
+            description
+          }
+          posts(first: 10000) {
+            edges {
+              node {
+                id
+                excerpt
+                title
+                slug
+              }
+            }
+          }
+        }
+      `,
+    });
+  
+    const posts = data?.data.posts.edges.map(({ node }) => node).map(post => {
+      return {
+        ...post,
+        path: `/posts/${post.slug}`
+      }
+    });
+  
+    const page = {
+      ...data?.data.generalSettings
+    }
+  
+    return {
+      props: {
+        page,
+        posts
+      }
+    }
+  }

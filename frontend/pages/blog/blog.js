@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 import Head from 'next/head'
 import Link from 'next/link'
-
-
 const BlogContainer = styled.div`
 
 
@@ -13,11 +11,13 @@ const MainContainer = styled.div`
 
 `
 const HeadingOne = styled.h1`
-
+    text-align: center;
+    font-size: 30px;
 
 `
 const Description = styled.p`
-
+    text-align: center;
+    font-size: 24px
 
 `
 const Paragraph = styled.p`
@@ -37,8 +37,8 @@ export default function Blog({ page, posts }) {
   return (
     <BlogContainer>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{`${title} -- ${description}`}</title>
+        <meta name="description" content={`${title} -- ${description}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

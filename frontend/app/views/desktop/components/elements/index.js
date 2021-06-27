@@ -14,6 +14,7 @@ import MenuButton from './MenuButton'
 import ContactForm from './ContactForm'
 import InfoCard from './InfoCard'
 import Status from './Status'
+import HorizontalScroll from './HorizontalScroll'
 
 export { 
     Loading,
@@ -37,5 +38,6 @@ export {
     MenuButton,
     ContactForm,
     InfoCard, 
-    Status
+    Status,
+    HorizontalScroll
 }

@@ -4,7 +4,7 @@ import { ScrollElement } from '../../elements/ScrollElement'
 
 const ExperienceGridContainer = styled.div`
     display: grid;
-    height: 500px;
+    height: 100%;
     align-items: center;
     border-top: 1px solid black;
 `
@@ -14,12 +14,12 @@ const ExperienceGridItem = styled.div`
 
 export const Experience = ({children, name}) => {
     return (
-        <ScrollElement name="experience">
+        // <ScrollElement name="experience">
             <ExperienceGridContainer>
                 <ExperienceGridItem>
                     Experience
                 </ExperienceGridItem>
             </ExperienceGridContainer>
-        </ScrollElement>
+        // </ScrollElement>
     )
 }

@@ -1,22 +1,15 @@
 import styled from 'styled-components'
-import { Center, Left, Right, Top } from './Sections'
+import { Center, Left, Right, Top as Navigation } from './Sections'
 
-const MainGridContainer = styled.div`
+const MainContainer = styled.div`
     width:100%;
     height:100vh;
     display: grid;
     grid-template-columns: 20% 65% 15%;
     grid-template-rows: 5% 85% 10%;
 `
-const LeftGridItem = styled.div`
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    transition: color background-color ease 2s;
-`
 const CenterGridItem = styled.div`
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 2; 
     grid-row-end: 4;
@@ -31,35 +24,14 @@ const TopGridItem = styled.div`
     // backdrop-filter: blur(5px);
     // border-left: 1px solid ${props => props.theme.textColor};
 `
-const RightGridItem = styled.div`
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1; 
-    grid-row-end: 4;
-    background-color: ${props => props.theme.sideColor};
-    transition: color background-color ease 2s;
-    color: ${props => props.theme.textColor};
-    font-family: ${props => props.theme.navFont};
-    text-align: center;
-    font-size: 18px;
-`
 export function Main(){
     return (
-        <MainGridContainer>
-            <TopGridItem>
-                <Top/>
-            </TopGridItem>
-            <RightGridItem>
-                <Right/>
-            </RightGridItem>
+        <MainContainer>
+            <Navigation/>
             <CenterGridItem>
                 <Center/>
             </CenterGridItem>
-            <LeftGridItem>
-                <Left/>
-            </LeftGridItem>
-            
-        </MainGridContainer>
+        </MainContainer>
     )
 }
 
