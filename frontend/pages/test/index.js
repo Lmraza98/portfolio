@@ -15,7 +15,7 @@ const index = () => {
     useEffect(() => {
         window.onscroll = () => {
             setScrolled(true)
-            console.log('scrolled')
+          
         }
     }, [scrolled])
  

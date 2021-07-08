@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Image from 'next/image'
+import Image from 'next/Image'
 import styled from "styled-components";
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 

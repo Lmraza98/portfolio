@@ -22,6 +22,23 @@ const Reducer = (state, action) => {
                 ...state,
                 error: action.payload
             };
+        case 'ADD_CATEGORY':
+            let categories = state.categories
+            categories.push(action.payload)
+            return {
+                ...state, 
+                categories: categories
+            }
+        case 'REMOVE_CATEGORY': 
+            categories = state.categories
+            let index = categories.findIndex( (value) => value === action.payload )
+            if (index > -1) {
+                categories.splice(index, 1);
+            }
+            return {
+                ...state,
+                categories: categories
+            }
         default:
             return state;
     }
@@ -36,7 +53,8 @@ const initialState = {
         contact: false
     },
     navigation: [],
-    online: null
+    online: null,
+    categories: []
 };
 
 const Store = ({children}) => {

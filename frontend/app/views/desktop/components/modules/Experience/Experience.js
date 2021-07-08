@@ -20,6 +20,6 @@ export const Experience = ({children, name}) => {
                     Experience
                 </ExperienceGridItem>
             </ExperienceGridContainer>
-        // </ScrollElement>
+       () // </ScrollElement>
     )
 }

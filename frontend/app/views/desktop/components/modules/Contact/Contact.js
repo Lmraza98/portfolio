@@ -14,12 +14,12 @@ const ContactGridItem = styled.div`
 
 export const Contact = ({children, name}) => {
     return (
-        // <ScrollElement name="contact">
+        <ScrollElement name="contact">
             <ContactGridContainer>
                 <ContactGridItem>
                     Contact
                 </ContactGridItem>
             </ContactGridContainer>
-        // {/* </ScrollElement> */}
+        // </ScrollElement>
     )
 }

@@ -15,6 +15,12 @@ import ContactForm from './ContactForm'
 import InfoCard from './InfoCard'
 import Status from './Status'
 import HorizontalScroll from './HorizontalScroll'
+import Navigation from './Navigation'
+import Updates from './Updates'
+import MenuComponent from './MenuComponent'
+import Badge from './Badge'
+import Tag from './Tag'
+
 
 export { 
     Loading,
@@ -39,5 +45,10 @@ export {
     ContactForm,
     InfoCard, 
     Status,
-    HorizontalScroll
+    HorizontalScroll,
+    Navigation,
+    Updates,
+    MenuComponent,
+    Badge,
+    Tag
 }

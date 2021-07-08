@@ -8,12 +8,21 @@ const AboutGridContainer = styled.div`
     height: 100%;
     align-items: center;
     width: 100%;
-    grid-template-rows: 20% 80%;
+    grid-template-rows: 1fr 1fr 1fr;
     // border-top: 1px solid black;
+    align-items: center;
+    background-color: white;
+    border-left: 7px solid black;
+    border-right: 7px solid black;
+
 `
 const AboutGridItem = styled.div`
 grid-row-start: 1;
 grid-row-end: 2;
+align-items: center;
+justify-content: center;
+align-text: center;
+text-align: center;
 `
 const AboutLineGridItem = styled.div`
 grid-row-start: 0;
@@ -25,11 +34,16 @@ const AboutLineContainer = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     top: 0;
     height: 20px;
-
+`
+const Section = styled.div`
+    grid-row-start: ${props => props.rowStart};
+    grid-row-end: ${props => props.rowEnd};
+    height: 100%;
+    background-color: ${props => props.backgroundColor}
 
 `
 
@@ -39,17 +53,15 @@ const AboutLineContainer = styled.div`
 export const About = ({children, name}) => {
     return (
             <AboutGridContainer>
-                <AboutLineGridItem>
-                    <AboutLineContainer>
-                        <svg width="100%" height="22" viewBox="0 0 770 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 11.5H320M450 11.5H770" stroke="black" stroke-width="2"/>
-                            <path d="M359.909 15.84H352.859L351.149 21H348.209L354.779 0.959999H357.989L364.559 21H361.649L359.909 15.84ZM359.249 13.59L356.369 3.69L353.519 13.59H359.249ZM373.125 7.8C371.885 7.8 370.665 8.22 369.465 9.06V18.63C370.225 18.95 371.175 19.11 372.315 19.11C374.835 19.11 376.095 17.15 376.095 13.23C376.095 9.61 375.105 7.8 373.125 7.8ZM369.465 -1.43051e-06V6.93C369.845 6.63 370.425 6.32 371.205 6C372.005 5.68 372.795 5.52 373.575 5.52C375.095 5.52 376.365 6.15 377.385 7.41C378.405 8.65 378.915 10.4 378.915 12.66C378.915 18.48 376.705 21.39 372.285 21.39C370.165 21.39 368.325 20.91 366.765 19.95V-1.43051e-06H369.465ZM392.374 19.47C391.214 20.75 389.694 21.39 387.814 21.39C385.934 21.39 384.434 20.76 383.314 19.5C382.194 18.24 381.634 16.24 381.634 13.5C381.634 10.74 382.214 8.72 383.374 7.44C384.554 6.16 386.084 5.52 387.964 5.52C389.844 5.52 391.334 6.15 392.434 7.41C393.554 8.67 394.114 10.68 394.114 13.44C394.114 16.18 393.534 18.19 392.374 19.47ZM387.904 7.74C385.564 7.74 384.394 9.65 384.394 13.47C384.394 17.27 385.554 19.17 387.874 19.17C388.834 19.17 389.654 18.72 390.334 17.82C391.014 16.92 391.354 15.42 391.354 13.32C391.354 11.22 391.054 9.77 390.454 8.97C389.874 8.15 389.024 7.74 387.904 7.74ZM401.788 21.39C400.148 21.39 399.008 20.95 398.368 20.07C397.728 19.17 397.408 17.89 397.408 16.23V5.82H400.108V16.17C400.108 17.17 400.238 17.91 400.498 18.39C400.758 18.85 401.278 19.08 402.058 19.08C402.858 19.08 403.628 18.96 404.368 18.72C405.128 18.46 405.748 18.11 406.228 17.67V5.91H408.928V21.27H406.738L406.438 19.65C405.858 20.13 405.148 20.54 404.308 20.88C403.468 21.22 402.628 21.39 401.788 21.39ZM418.248 21.39C416.688 21.39 415.658 21.07 415.158 20.43C414.658 19.77 414.408 18.65 414.408 17.07V7.95L411.438 7.8L411.708 6.03L414.468 5.82L414.738 2.22L417.168 1.77V5.82H421.608L421.338 7.95H417.138V17.34C417.138 17.76 417.148 18.08 417.168 18.3C417.208 18.5 417.318 18.69 417.498 18.87C417.698 19.03 418.118 19.11 418.758 19.11C419.398 19.11 420.038 19 420.678 18.78L421.188 20.79C420.248 21.19 419.268 21.39 418.248 21.39Z" fill="black"/>
-                        </svg>
-                    </AboutLineContainer>
-                </AboutLineGridItem>
-                <AboutGridItem>
-                    About
-                </AboutGridItem>
+                <Section rowStart={1} rowEnd={2} backgroundColor="">
+                    Skills
+                </Section>
+                <Section rowStart={2} rowEnd={3} backgroundColor="">
+                    FrontEnd
+                </Section>
+                <Section rowStart={3} rowEnd={4} backgroundColor="">
+                    Backend
+                </Section>
             </AboutGridContainer>
     )
 }

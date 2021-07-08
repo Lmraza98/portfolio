@@ -30,14 +30,11 @@ function HomeLayout({children}){
     const [ state, dispatch ] = useContext(GlobalContext)
     const menu = state.menu
     return (
-        <Container>
         <HomeLayoutContainer>
-            <SideMenu show={menu}/>
+            {/* <SideMenu show={menu}/> */}
                 <Main/>
             
         </HomeLayoutContainer>
-        <Footer/>
-        </Container>
     )
 }
 

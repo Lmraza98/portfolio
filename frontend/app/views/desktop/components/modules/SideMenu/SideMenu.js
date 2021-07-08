@@ -1,25 +1,28 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import Image from 'next/image'
-import { PageLink, Chat } from '../../elements'
+import Image from 'next/Image'
+import { PageLink, Chat, Navigation } from '../../elements'
 const SideMenuGridItem = styled.div`
     grid-row-start: ${props => props.start};
     grid-row-end: ${props => props.start};
     background-color: ${props => props.theme.mode === 'light' ?  (props.item === 'blog' ? '#000000' : 'transparent') : (props.item === 'blog' ? '#bababa' : 'transparent')};
     transition: color ease 2s;
     transition: background-color ease 2s;
-    
-`
-const ItemGrid = styled.div`
-    display: grid; 
-    grid-template-rows: 50px 1fr;
+    align-text: center;
+    text-align: center;
+    justify-content: center;
     height: 100%;
     
 `
+
 const ItemGridItem = styled.div`
     grid-row-start: ${props => props.start};
     grid-row-end: ${props => props.end};
-    // align-items: center;
+    align-items: center;
+    align-content: center;
+    // justify-content: center;
+    height: 100%;
+    width: 100%;
 `
 const MenuGridContainer= styled.div`
     display: grid; 
@@ -47,7 +50,7 @@ const PageLinkContainer = styled.div`
     // top: 0;
 `
 const Icon = styled.i`
-    font-size: ${props => props.show ? "25px" : "0px"};
+    font-size: ${props => props.show ? "50px" : "0px"};
     color: ${props => props.theme.textColor === "#ffffff" ? "#000000" : " #ffffff"};
     transition:  font-size .25s;
     transition: color ease 2s;
@@ -56,10 +59,16 @@ const Header = styled.div`
     color: ${props => props.theme.mode === 'light' ?  (props.item === 'blog' ? 'white' : 'black') : (props.item === 'blog' ? 'black' : 'white')};
     font-size: ${props => props.show ? "40px" : "0px"};
     font-family: ${props => props.theme.navFont};
-    // height: 90%;
+    // height: 100%;
     // padding-top: 10%;
+    // align-text: center;
+    text-align: center;
     transition: color ease 2s;
-    
+`
+const ContactHeader = styled(Header)
+`
+    height: 100%;
+    align-self: center;
 `
 const LinksContainer = styled.div`
     display: flex;
@@ -76,6 +85,7 @@ const ArticlesListContainer = styled.div`
 const BlogCardGridItem = styled.div`
     grid-row-start: 3;
     grid-row-end: 4;
+
     height: 100%;
 
 
@@ -95,29 +105,44 @@ const BlogExplanation = styled.div`
     transition:  font-size .25s;
 
 `
+const IconRow = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+`
+const MidFlexColumn = styled.div`
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+`
 
 const SideMenu = ({show}) => {
     return (
                 <MenuGridContainer show={show} left="-100px">
                     <SideMenuGridItem start="1" end="2">
-                        <Chat/>
+                        <Navigation/>
                     </SideMenuGridItem>
                     <SideMenuGridItem item="blog" start="2" end="3">
+                    <MidFlexColumn>
                         <Header item="blog" show={show}>Blog</Header>
-                        <PageLink href="https://www.youtube.com"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
-                        <PageLink href="https://www.linkedin.com"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
-                        <PageLink href="https://www.github.com"><Icon show={show} className="fab fa-github"></Icon></PageLink>
+                        <IconRow>
+                            <PageLink href="https://www.youtube.com"><Icon show={show}  className="fab fa-youtube-square"></Icon></PageLink>
+                            <PageLink href="https://www.linkedin.com"><Icon show={show} className="fab fa-linkedin"></Icon></PageLink>
+                            <PageLink href="https://www.github.com"><Icon show={show} className="fab fa-github"></Icon></PageLink>
+                        </IconRow>
+                    </MidFlexColumn>
+                        
                     </SideMenuGridItem>
                     <SideMenuGridItem start="3" end="4"> 
-                    <ItemGrid >
-                        <ItemGridItem start="1" end="2">
-                            <Header show={show}>Contact</Header>
-                        </ItemGridItem>
-                        <ItemGridItem start="2" end="3">
+                            <ContactHeader show={show}>Contact</ContactHeader>
+                        {/* <ItemGridItem start="2" end="3">
                             <ArticlesListContainer>
                             </ArticlesListContainer>
-                        </ItemGridItem>
-                    </ItemGrid>
+                        </ItemGridItem> */}
                     
                     </SideMenuGridItem>
                 </MenuGridContainer> 

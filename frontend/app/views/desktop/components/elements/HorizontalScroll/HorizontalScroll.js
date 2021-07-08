@@ -15,7 +15,7 @@ height: 100%;
 export default function HorizontalScroll({children}) {
 
     const [ state, dispatch ] = useContext(GlobalContext)
-    console.log(JSON.stringify(state.navigation))
+   
     const [scrollPosition, setScrollPosition] = useState(0);
     const [ pos, setPos ] = useState([{"greetings": true}, {"about": false}, {"work": false}, {"contact": false}])
     const scroller = useRef(null)
@@ -28,22 +28,22 @@ export default function HorizontalScroll({children}) {
             let pos = scroller.current.scrollTop
             let max = scroller.current.scrollHeight
             // update the scroll positionnosol.
-            if(pos <= (max / 4)){
-                console.log("first")
+            if(pos <= ((max / 4) - (max / 8) )){
+                
                 dispatch({type: 'SET_NAV', payload: [{"greetings":true},{"about":false},{"work":false},{"contact":false}]})
-                setScrollPosition(pos)
-            }else if(pos <= (max / 4)*2){
-                console.log("second")
+              
+            }else if(pos <= ((max / 4)*2)- (max / 8)){
+                
                 dispatch({type: 'SET_NAV', payload:[{"greetings":false},{"about":true},{"work":false},{"contact":false}]})
-                setScrollPosition(pos)
-            }else if(pos <= (max / 4)*3){
-                console.log("third")
+            
+            }else if(pos <= ((max / 4)*3)- (max / 8)){
+              
                 dispatch({type: 'SET_NAV', payload: [{"greetings":false},{"about":false},{"work":true},{"contact":false}] })
-                setScrollPosition(pos)
-            }else if(pos <= (max / 4)*4){
-                console.log("fourth")
+               
+            }else if(pos <= ((max / 4)*4)- (max / 8)){
+             
                 dispatch({type: 'SET_NAV', payload: [{"greetings":false},{"about":false},{"work":false},{"contact":true}]})
-                setScrollPosition(pos)
+            
             }
         }
 

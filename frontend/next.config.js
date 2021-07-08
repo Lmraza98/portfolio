@@ -1,3 +1,7 @@
+// const withTranspileModules = require('next-transpile-modules')(['react-spring'])
+
+// module.exports = withTranspileModules({ transpileModules: ['react-spring', '@babel/runtime'] })
+
 module.export = {
 
     webpack: (config, defaultLoaders) => {
@@ -8,4 +12,5 @@ module.export = {
     future: {
     webpack5: true
     }
+    
 }
