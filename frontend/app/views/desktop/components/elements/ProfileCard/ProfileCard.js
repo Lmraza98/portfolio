@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Logo from "../Logo";
-import { ScrollLink, ScrollLink } from '../ScrollLink'
+import { ScrollLink, LinkScroller } from '../ScrollLink'
 import ProfileImage from '../ProfileImage'
 
 const ProfileCardGrid = styled.div`
