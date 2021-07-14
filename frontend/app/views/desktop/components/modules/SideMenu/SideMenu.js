@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import Image from 'next/Image'
+import Image from 'next/image'
 import { PageLink, Chat, Navigation } from '../../elements'
 const SideMenuGridItem = styled.div`
     grid-row-start: ${props => props.start};

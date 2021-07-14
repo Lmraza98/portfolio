@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Center, Left, Right, Top } from './Sections'
 import { Navigation, Links, Updates, MenuComponent } from '../../elements'
-import Image from 'next/Image'
+import Image from 'next/image'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 import { useContext } from 'react'
 

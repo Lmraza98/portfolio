@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
-import Image from 'next/Image'
+import Image from 'next/image'
 import { GreetingsLine, ScrollElement, Updates, Badge } from '../../elements'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 import { useSpring, animated } from 'react-spring'
