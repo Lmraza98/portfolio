@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Logo from "../Logo";
 import ThemeToggle from '../ThemeToggle'
 import styled from 'styled-components'
-import { ScrollLink, scroller } from '../ScrollLink'
+import { ScrollLink, ScrollLink } from '../ScrollLink'
 import Transition from '../Transition'
 import { GlobalContext } from '../../../../../contexts/GlobalContext'
 import useScrollPos from '../../../../../hooks/useScrollPos'

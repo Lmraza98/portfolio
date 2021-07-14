@@ -1,7 +1,7 @@
 import Scroll from 'react-scroll'
 import styled from 'styled-components'
 const Link = Scroll.Link;
-export const scroller = Scroll.scroller;
+export const LinkScroller = Scroll.scroller;
 
 const StyledScrollLink = styled.div
 `

@@ -1,3 +1,3 @@
-import { ScrollLink, scroller } from './ScrollLink.js'
+import { ScrollLink, LinkScroller } from './ScrollLink.js'
 
-export { ScrollLink, scroller }
+export { ScrollLink, LinkScroller }
