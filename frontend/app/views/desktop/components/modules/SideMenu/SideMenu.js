@@ -12,7 +12,6 @@ const SideMenuGridItem = styled.div`
     text-align: center;
     justify-content: center;
     height: 100%;
-    
 `
 
 const ItemGridItem = styled.div`

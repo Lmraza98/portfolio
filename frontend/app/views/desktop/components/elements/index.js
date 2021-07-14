@@ -1,7 +1,7 @@
 import Loading from './Loading'
 import Toggle from './Toggle'
 import ThemeToggle from './ThemeToggle'
-import ScrollLink from './ScrollLink'
+import { ScrollLink, LinkScroller } from './ScrollLink'
 import { scroller, ScrollElement } from './ScrollElement'
 import { GreetingsLine, AboutLine, ExperienceLine, WorkLine } from './ScrollLine'
 import PageLink from './PageLink'
