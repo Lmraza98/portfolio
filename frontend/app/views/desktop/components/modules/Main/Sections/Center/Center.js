@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { HorizontalScroll } from '../../../../elements'
+import { MainScroll } from '../../../../elements'
 import { About, Contact, Experience, Greetings, Work } from '../../../../modules'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { GlobalContext } from '../../../../../../../contexts/GlobalContext'
 
 const Module = ({children}) => {
     return (
@@ -10,14 +11,26 @@ const Module = ({children}) => {
     )
 }
 const Center = () => {
-    
-    return (
-        <HorizontalScroll>
-            <Greetings/>
-            <About/>
-            <Work/>
-            <Contact/>
-        </HorizontalScroll>
+    const [state, dispatch] = useContext(GlobalContext)
+
+    const greetings = state.greetings
+        return (
+        <MainScroll scroll={state.greetings}>
+            {
+                greetings 
+                ? 
+                <Greetings banner={greetings}/> 
+                :
+                <>
+                    <Greetings/>
+                    <About/>
+                    <Work/>
+                    <Contact/>
+                </>
+                
+            }
+            
+        </MainScroll>
 
         
         // <HorizontalScroll>

@@ -10,16 +10,19 @@ const TagContainer = styled.div`
     // margin: ${props => props.selected ?  '-3px' : '0px' };
     // padding-top: ${props => props.selected ?  '-3px' : '0px' };
     // width: ${props => props.selected ? 'calc(auto - 6px)' : 'auto'};
-    margin-right: 25px;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
     // color: white;
     border-radius: 20px;
+    width: 50px;
+    font-size: 13px;
+    text-align: center;
 `
 
 

@@ -18,6 +18,7 @@ const Title = styled.div`
     color: white;
     font-family: "${ props => props.theme.navFont}";
   font-size: 50px;
+  z-index: 20;
 `
 const MenuComponent = ({title, children}) => {
 

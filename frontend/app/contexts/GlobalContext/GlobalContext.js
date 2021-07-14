@@ -29,6 +29,10 @@ const Reducer = (state, action) => {
                 ...state, 
                 categories: categories
             }
+        case 'SET_GREETINGS':
+            return {
+                greetings: !state.greetings
+            }
         case 'REMOVE_CATEGORY': 
             categories = state.categories
             let index = categories.findIndex( (value) => value === action.payload )
@@ -54,7 +58,8 @@ const initialState = {
     },
     navigation: [],
     online: null,
-    categories: []
+    categories: [],
+    greetings: true
 };
 
 const Store = ({children}) => {

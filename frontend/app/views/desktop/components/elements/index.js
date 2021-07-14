@@ -14,7 +14,7 @@ import MenuButton from './MenuButton'
 import ContactForm from './ContactForm'
 import InfoCard from './InfoCard'
 import Status from './Status'
-import HorizontalScroll from './HorizontalScroll'
+import MainScroll from './MainScroll'
 import Navigation from './Navigation'
 import Updates from './Updates'
 import MenuComponent from './MenuComponent'
@@ -45,7 +45,7 @@ export {
     ContactForm,
     InfoCard, 
     Status,
-    HorizontalScroll,
+    MainScroll,
     Navigation,
     Updates,
     MenuComponent,

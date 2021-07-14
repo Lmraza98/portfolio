@@ -7,6 +7,7 @@ const BadgeContainer = styled.div`
     justify-content: space-evenly;
     // align-items: flex-start;
     height: 100%;
+    width: 300px;
 `
 
 const Heading = styled.div`
@@ -14,8 +15,8 @@ const Heading = styled.div`
     flex-direction: column;
     justify-content: center;
     border-radius: 100px;
-    background-color: #F8EB77;
-    color: black;
+    background-color: black;
+    color: white;
     height: 50px;
     width: 200px;
     font-size: 25px;

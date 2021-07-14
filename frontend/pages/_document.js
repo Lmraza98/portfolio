@@ -37,7 +37,7 @@ class MyDocument extends Document {
         `}</style>
       <Html>
         <Head>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&family=Galada&family=Lexend+Zetta&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&family=Galada&family=Lexend+Zetta&family=Comfortaa&display=swap" rel="stylesheet" />
         </Head>
         <script src="https://kit.fontawesome.com/a23e206ba2.js" crossorigin="anonymous"></script>
         

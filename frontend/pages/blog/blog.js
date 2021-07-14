@@ -164,6 +164,17 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 `
+const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+`
+const Date = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+`
 const sliceCategory = (category, index) => {
   if(category.includes(' '))
   {
@@ -174,10 +185,6 @@ const sliceCategory = (category, index) => {
   
 }
 const defineColor = (category) => {
- 
-
-
-
   if(category)
   {
     category = sliceCategory(category, 0)
@@ -201,24 +208,11 @@ const defineColor = (category) => {
     }
     return color
   }
-  
 }
-
 
 export default function Blog({ page, posts, tags, categories }) {
   const [ state ] = useContext(GlobalContext)
   const { title, description } = page;
-  // const [ tag, setTag ] = useState(false)
-  // const onTagClick = (e) => {
-  //   e.preventDefault();
-  //   tag ? setTag(true) : setTag(false)
-  //   console.log("tag clicked")
-  // }
-  // console.log("tag" + tag)
-  
-  // console.log("TAGS" + JSON.stringify(tags))
-
-  
   return (
     <BlogContainer>
       <Head>
@@ -258,10 +252,10 @@ export default function Blog({ page, posts, tags, categories }) {
                 {
                   state.categories.length > 0 ? 
                   tags && tags.filter((tag) => { return state.categories.includes(sliceCategory(tag.name, 0))}).map((tag) => {
-                    return (<Tag selectable={true} key={tag.name}  name={tag.name} color={defineColor(tag.name)}/>)
+                    return (<Tag selectable={true} name={sliceCategory(tag.name, 1)}  key={tag.name} color={defineColor(tag.name)}/>)
                   }) : 
-                  tags && tags.length > 0 && tags.map((category, index) => {
-                    return <Tag selectable={true} key={category.name}  name={category.name} color={defineColor(category.name)}/>
+                  tags && tags.length > 0 && tags.map((tag, index) => {
+                    return <Tag selectable={true} name={sliceCategory(tag.name, 1)}  key={tag.name} color={defineColor(tag.name)}/>
                   })
                 }
                 </TagList>
@@ -282,26 +276,30 @@ export default function Blog({ page, posts, tags, categories }) {
                 posts && posts.length > 0 && posts.filter(post => { return post.tags.edges.filter((tag) => {return ( state.categories.includes( sliceCategory(tag.node.name, 0) ) ) }).length > 0}).map((post)=> {
                   return(
                     <PostBlockContainer key={post.slug} >
-                    <Link href={post.path}>
-                      <PostLink>
-                        <Title dangerouslySetInnerHTML={{
-                          __html: post.title
-                        }} />
-                        <TagList>
-                        {
-                          post.tags.edges.map((tag, index) => {
-                            console.log('name ' + tag.node.name)
-                            return(<Tag selectable={false} key={tag.node.name} name={tag.node.name} color={defineColor(tag.node.name)}/>)
-                          })
-                        }
-                        </TagList>
+                        <Link href={post.path}>
+                          <PostLink>
+                            <Title dangerouslySetInnerHTML={{
+                              __html: post.title
+                            }} />
+                          </PostLink>
+                        </Link>
+                        <FlexRow>
+                          <Date>{
+                          post.date.slice(0 ,post.date.indexOf('T'))
+                          }</Date>
+                          <TagList>
+                          {
+                            post.tags.edges.map((tag, index) => {
+                              console.log('name ' + tag.node.name)
+                              return(<Tag selectable={false} key={tag.node.name} name={sliceCategory(tag.node.name,1)} color={defineColor(tag.node.name)}/>)
+                            })
+                          }
+                          </TagList>
+                        </FlexRow>
                         <PostBody dangerouslySetInnerHTML={{
                           __html: post.excerpt
                         }} />
-                      </PostLink>
-                    </Link>
-                    
-                  </PostBlockContainer> 
+                      </PostBlockContainer> 
                   )
                 
                 })
@@ -309,26 +307,30 @@ export default function Blog({ page, posts, tags, categories }) {
                   posts && posts.length > 0 && posts.map(post => { 
                     return(
                       <PostBlockContainer key={post.slug} >
-                    <Link href={post.path}>
-                      <PostLink>
-                        <Title dangerouslySetInnerHTML={{
-                          __html: post.title
-                        }} />
-                        <TagList>
-                        {
-                          post.tags.edges.map((tag, index) => {
-                            console.log('tag:' + defineColor(tag.node.name))
-                            return(<Tag selectable={false} key={tag.node.name} keyValue={tag.node.name} name={sliceCategory(tag.node.name, 1)} color={defineColor(tag.node.name)}/>)
-                          })
-                        }
-                        </TagList>
+                        <Link href={post.path}>
+                          <PostLink>
+                            <Title dangerouslySetInnerHTML={{
+                              __html: post.title
+                            }} />
+                          </PostLink>
+                        </Link>
+                        <FlexRow>
+                          <Date>{
+                          post.date.slice(0 ,post.date.indexOf('T'))
+                          }</Date>
+                          <TagList>
+                          {
+                            post.tags.edges.map((tag, index) => {
+                              console.log('name ' + tag.node.name)
+                              return(<Tag selectable={false} key={tag.node.name} name={sliceCategory(tag.node.name,1)} color={defineColor(tag.node.name)}/>)
+                            })
+                          }
+                          </TagList>
+                        </FlexRow>
                         <PostBody dangerouslySetInnerHTML={{
                           __html: post.excerpt
                         }} />
-                      </PostLink>
-                    </Link>
-                    
-                  </PostBlockContainer>
+                      </PostBlockContainer> 
                     )
                   
                   })
