@@ -1,3 +1,3 @@
-import { Updates } from './updates'
+import { Updates } from './Updates'
 
 export default Updates
