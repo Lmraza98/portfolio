@@ -6,7 +6,6 @@ interface OverlayProps {
 }
 export const Overlay: React.FC<OverlayProps> = ({
   open,
-  onClose,
   topOffset,
 }) => {
   return (

@@ -4,10 +4,13 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white py-20 px-4">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-semibold text-center text-[#1E2A47] mb-8">Let's Work Together</h1>
+        <h1 className="text-3xl font-semibold text-center text-[#1E2A47] mb-8">
+        Let&apos;s Work Together
+        </h1>
         <p className="text-center text-[#666666] mb-12">
-          Have a project in mind? I'd love to hear about it. Send me a message and I'll get back to you as soon as possible.
+        Have a project in mind? I&apos;d love to hear about it. Send me a message and I&apos;ll get back to you as soon as possible.
         </p>
+
         
         <form className="space-y-6">
           <div>

@@ -47,8 +47,8 @@ export default function Home() {
       </div>
       <div className="h-full w-full bg-[#1E2A47] py-32" id="about">
         <p className="text-white text-xl font-inter text-center max-w-2xl mx-auto px-8 leading-relaxed">
-          Hi, I'm Lucas; I freelance developer passionate about creating
-          innovative software solutions. I specialize in full-stack. I enjoy
+        Hi, I&apos;m Lucas; I&apos;m a freelance developer passionate about creating,
+        innovative software solutions. I specialize in full-stack. I enjoy
           tackling complex problems and bringing my ideas to life through code.
         </p>
       </div>
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
 
             {/* Line */}
-             <div className="-mx-12 px-4 w-[calc(100%+6rem)]">
+            <div className="-mx-12 px-4 w-[calc(100%+6rem)]">
               <div className="w-full h-[.5px] bg-gray-300"/>
             </div>
             {/* Line */}   
@@ -236,7 +236,7 @@ export default function Home() {
       <div className="py-20 px-8 bg-[#F8F9FA]" id="contact">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-[#1E2A47] mb-4">Interested in working together?</h2>
-          <p className="text-[#666666] mb-8">Let's discuss what you need done!</p>
+          <p className="text-[#666666] mb-8">Let&apos;s discuss what you need done!</p>
           <a 
             href="/contact" 
             className="inline-block bg-[#4FA3E3] text-white py-3 px-8 rounded-md hover:bg-[#3A8AC7] transition-colors duration-200"
